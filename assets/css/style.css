@@ -19,9 +19,6 @@
 header{
     margin-bottom: 12vh;
 }
-body{
-    min-height: 2000px;
-}
 body::-webkit-scrollbar {
     width: 0.4vw;
 }
