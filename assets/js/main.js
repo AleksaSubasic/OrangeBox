@@ -126,8 +126,8 @@ function writeCategories(location, part, arr, layoutType){
     
     location.innerHTML = dynamicCategories;
 }
-if(urlPath == "/OrangeBox/index.html" || urlPath == "/") writeCategories(getCategoryTS, 1, categoriesArr, 2);
-if(urlPath == "/OrangeBox/index.html" || urlPath == "/") writeCategories(getCategoryBS, 2, categoriesArr, 2);
+if(urlPath == "/index.html" || urlPath == "/") writeCategories(getCategoryTS, 1, categoriesArr, 2);
+if(urlPath == "/index.html" || urlPath == "/") writeCategories(getCategoryBS, 2, categoriesArr, 2);
 
 
 // Products dynamic writing
@@ -149,9 +149,9 @@ function writeProducts(location, rep, arr){
 
     location.innerHTML = dynamicProducts;
 }
-if(urlPath == "/OrangeBox/index.html" || urlPath == "/") writeProducts(getNewProductsBlock, 8, newProductsArr);
-if(urlPath == "/OrangeBox/index.html" || urlPath == "/") writeProducts(getBestSellerBlock, 8, bestSellerArr);
-if(urlPath == "/OrangeBox/products.html") writeProducts(getAllProductsBlock, productsArr.length, productsArr);
+if(urlPath == "/index.html" || urlPath == "/") writeProducts(getNewProductsBlock, 8, newProductsArr);
+if(urlPath == "/index.html" || urlPath == "/") writeProducts(getBestSellerBlock, 8, bestSellerArr);
+if(urlPath == "/products.html") writeProducts(getAllProductsBlock, productsArr.length, productsArr);
 
 
 // Getting product details on button click

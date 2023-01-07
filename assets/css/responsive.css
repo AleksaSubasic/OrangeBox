@@ -246,22 +246,14 @@
     .product-block{
         width: 100%;
     }
+    #modal{
+        width: 95%;
+    }
     .modal-block{
-        width: 350px;
+        width: 100%;
     }
-    #modal-image{
-        height: 240px;
-        margin-right: 0px;
-        margin-bottom: 2vh;
-        background-size: 60%;
-    }
-    #modal-block-ts h5, #modal-product-information::before, #modal-block-bs h5, #modal-quantity{
-        font-size: 0.9rem;
-    }
-    #modal-product-name, #add-to-cart-btn{
-        font-size: 1rem !important;
-    }
-    #modal-product-information::before{
-        top: -13px;
+    #close-btn{
+        top: 103%;
+        left: 45%;
     }
 }
