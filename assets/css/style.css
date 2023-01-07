@@ -116,9 +116,8 @@ nav{
 .nav-link, .nav-logo{
     padding: 0px 30px !important;
     font-size: 1.1rem;
-    transition: 0.4s;
 }
-.nav-logo:nth-child(1){
+.nav-logo{
     display: none;
 }
 .nav-link:hover, .nav-logo:hover{
