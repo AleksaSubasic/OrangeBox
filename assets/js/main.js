@@ -82,14 +82,14 @@ function writeCategories(location, part, arr, layoutType){
                                                       <div id="id${arr[i].cName}" class="cat-image d-flex flex-column justify-content-between block-long shadow-on border-15 border-gray orange-hover">
                                                         <h5 class="text-center">${arr[i].cName}</h5>
                                                         <img src="${arr[i].cImage}" alt="${arr[i].cName}.svg"/>
-                                                        <button class="open-cat-btn text-capitalize border-15">view more</button>
+                                                        <button class="my-btn open-cat-btn btn-hover text-capitalize border-15">view more</button>
                                                       </div>`;
                             }
                             else{
                                 dynamicCategories += `<div id="id${arr[i].cName}" class="cat-image d-flex flex-column justify-content-between cat-block shadow-on border-15 border-gray orange-hover">
                                                         <h5 class="text-center">${arr[i].cName}</h5>
                                                         <img src="${arr[i].cImage}" alt="${arr[i].cName}.svg"/>
-                                                        <button class="open-cat-btn text-capitalize border-15">view more</button>
+                                                        <button class="my-btn open-cat-btn btn-hover text-capitalize border-15">view more</button>
                                                       </div>`;
                             }
                         }
@@ -100,7 +100,7 @@ function writeCategories(location, part, arr, layoutType){
                                 dynamicCategories += `<div id="id${arr[i].cName}" class="cat-image d-flex flex-column justify-content-between block-long shadow-on border-15 border-gray orange-hover">
                                                         <h5 class="text-center">${arr[i].cName}</h5>
                                                         <img src="${arr[i].cImage}" alt="${arr[i].cName}.svg"/>
-                                                        <button class="open-cat-btn text-capitalize border-15">view more</button>
+                                                        <button class="my-btn open-cat-btn btn-hover text-capitalize border-15">view more</button>
                                                       </div>
                                                       <div class="d-flex">`;
 
@@ -109,7 +109,7 @@ function writeCategories(location, part, arr, layoutType){
                                 dynamicCategories += `<div id="id${arr[i].cName}" class="cat-image d-flex flex-column justify-content-between cat-block shadow-on border-15 border-gray orange-hover">
                                                         <h5 class="text-center">${arr[i].cName}</h5>
                                                         <img src="${arr[i].cImage}" alt="${arr[i].cName}.svg"/>
-                                                        <button class="open-cat-btn text-capitalize border-15">view more</button>
+                                                        <button class="my-btn open-cat-btn btn-hover text-capitalize border-15">view more</button>
                                                       </div>`;
                             }
                         }
@@ -126,8 +126,8 @@ function writeCategories(location, part, arr, layoutType){
     
     location.innerHTML = dynamicCategories;
 }
-if(urlPath == "/OrangeBox/" || urlPath == "/OrangeBox/index.html" || urlPath == "/") writeCategories(getCategoryTS, 1, categoriesArr, 2);
-if(urlPath == "/OrangeBox/" || urlPath == "/OrangeBox/index.html" || urlPath == "/") writeCategories(getCategoryBS, 2, categoriesArr, 2);
+if(urlPath == "/index.html" || urlPath == "/") writeCategories(getCategoryTS, 1, categoriesArr, 2);
+if(urlPath == "/index.html" || urlPath == "/") writeCategories(getCategoryBS, 2, categoriesArr, 2);
 
 
 // Products dynamic writing
@@ -142,16 +142,16 @@ function writeProducts(location, rep, arr){
                                 <img src="${arr[i].pImage}" alt="${arr[i].pName}"/>
                                 <div class="d-flex justify-content-between">
                                     <h5 class="border-10"><span class="hide">Price:</span> ${arr[i].pPrice}&dollar;</h5>
-                                    <button class="open-product-btn text-capitalize border-10" value="${arr[i].pId}">View more</button>
+                                    <button class="my-btn open-product-btn btn-hover text-capitalize border-10" value="${arr[i].pId}">View more</button>
                                 </div>
                             </div>`;
     }
 
     location.innerHTML = dynamicProducts;
 }
-if(urlPath == "/OrangeBox/" || urlPath == "/OrangeBox/index.html" || urlPath == "/") writeProducts(getNewProductsBlock, 8, newProductsArr);
-if(urlPath == "/OrangeBox/" || urlPath == "/OrangeBox/index.html" || urlPath == "/") writeProducts(getBestSellerBlock, 8, bestSellerArr);
-if(urlPath == "/OrangeBox/products.html") writeProducts(getAllProductsBlock, productsArr.length, productsArr);
+if(urlPath == "/index.html" || urlPath == "/") writeProducts(getNewProductsBlock, 8, newProductsArr);
+if(urlPath == "/index.html" || urlPath == "/") writeProducts(getBestSellerBlock, 8, bestSellerArr);
+if(urlPath == "/products.html") writeProducts(getAllProductsBlock, productsArr.length, productsArr);
 
 
 // Getting product details on button click
@@ -165,14 +165,13 @@ let getModalProductQuant = document.querySelector('#m-quant');
 // Successfully added to cart
 let getAddToCartBtn = document.querySelector('#add-to-cart-btn');
 getAddToCartBtn.addEventListener('click', () => {
+    getAddToCartBtn.classList.add("success");
     getAddToCartBtn.innerHTML = "Successfully added to cart!";
     setTimeout(() => {
+        getAddToCartBtn.classList.remove("success");
         getAddToCartBtn.innerHTML = "Add to cart";
     }, 1500);
 })
-// $("#add-to-cart-btn").click(() => {
-//     $("#add-to-cart-btn p").html("Successfuly added to cart!").fadeIn('slow');
-// });
 let selectedOpenProductBtn = getOpenProductBtn.forEach((el) => {
     el.addEventListener('click', () => {
         let getModalProductName = document.querySelector('#modal-product-name');
@@ -202,7 +201,6 @@ let selectedOpenProductBtn = getOpenProductBtn.forEach((el) => {
         });
     })
 });
-// Na escape dugme ugasiti modal
 let exitOnEscapeKey = document.addEventListener('keydown', (el) => {
     if(el.key == 'Escape') {
         getModal.classList.add('hide');
