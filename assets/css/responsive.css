@@ -5,7 +5,7 @@
     #product-cat-block h5{
         font-size: 1.1rem;
     }
-    .open-product-btn, .open-cat-btn{
+    .my-btn{
         font-size: 0.9rem;
     }
     .product-block{
@@ -38,7 +38,7 @@
     .product-block{
         width: 220px;
     }
-    .open-product-btn, .open-cat-btn{
+    .my-btn{
         font-size: 0.8rem;
     }
     #product-cat-block h5, #safety-blocks h4, .product-block h5{
@@ -96,7 +96,7 @@
     .product-block .d-flex .hide{
         display: inline-block !important;
     }
-    .open-product-btn, .open-cat-btn{
+    .my-btn{
         font-size: 0.9rem;
     }
     #safety-block{
@@ -176,12 +176,13 @@
     }
     #modal{
         flex-direction: column;
+        height: 80vh;
     }
     .modal-block{
         width: 400px;
     }
     #modal-image{
-        height: 240px;
+        height: inherit;
         margin-right: 0px;
         margin-bottom: 2vh;
         background-size: 60%;
@@ -194,6 +195,10 @@
     }
     #modal-product-information::before{
         top: -13px;
+    }
+    #close-btn{
+        top: -10px;
+        right: -10px;
     }
     #copyright{
         flex-direction: column;
@@ -251,9 +256,5 @@
     }
     .modal-block{
         width: 100%;
-    }
-    #close-btn{
-        top: 103%;
-        left: 45%;
     }
 }
