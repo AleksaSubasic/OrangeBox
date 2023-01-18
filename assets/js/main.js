@@ -53,15 +53,19 @@ function loadSlideshow(){
 // Categories dynamic writing
 let getCategoryTS = document.querySelector('#product-cat-block-ts');
 let getCategoryBS = document.querySelector('#product-cat-block-bs');
-function writeCategories(location, part, arr, layoutType){
+let getCategoryPicker = document.querySelector('#category-picker');
+function writeCategories(location, arr, layoutType, part){
     // case 1: default category layout, case 2: custom category layout/home page category layout
     let dynamicCategories = "";
 
     switch (layoutType) {
         case 1:
-                for (let i = 0; i < arr.length; i++) {
-                    
+                for (var i = 0; i < arr.length; i++) {
+                    dynamicCategories += `<label for="cat${arr[i].cName}">${arr[i].cName}</label>
+                                          <input type="checkbox" name="cat${arr[i].cName}" id="cat${arr[i].cName}" value="${i+1}"/>`;
                 }
+                dynamicCategories += `<label for="catDeals">Deals</label>
+                                          <input type="checkbox" name="catDeals" id="catDeals" value="${i+1}"/>`;
             break;
         case 2:
                 // First or second half layout, part 1 or part 2
@@ -126,32 +130,35 @@ function writeCategories(location, part, arr, layoutType){
     
     location.innerHTML = dynamicCategories;
 }
-if(urlPath == "/OrangeBox/index.html" || urlPath == "/OrangeBox/") writeCategories(getCategoryTS, 1, categoriesArr, 2);
-if(urlPath == "/OrangeBox/index.html" || urlPath == "/OrangeBox/") writeCategories(getCategoryBS, 2, categoriesArr, 2);
+// For github: urlPath == "/OrangeBox/..."
+if(urlPath == "/OrangeBox/index.html" || urlPath == "/OrangeBox/") writeCategories(getCategoryTS, categoriesArr, 2, 1);
+if(urlPath == "/OrangeBox/index.html" || urlPath == "/OrangeBox/") writeCategories(getCategoryBS, categoriesArr, 2, 2);
+if(urlPath == "/OrangeBox/products.html") writeCategories(getCategoryPicker, categoriesArr, 1, null);
 
 
 // Products dynamic writing
 let getNewProductsBlock = document.querySelector('#new-products-block .product-container');
 let getBestSellerBlock = document.querySelector('#best-seller-block .product-container');
-let getAllProductsBlock = document.querySelector('#all-products .product-container');
-function writeProducts(location, rep, arr){
+let getProductContainer = document.querySelector('#all-products .product-container');
+function writeProducts(location, arr, rep){
     let dynamicProducts = "";
     for(let i = 0; i < rep; i++){
-        dynamicProducts += `<div class="product-block shadow-on border-15 border-gray orange-hover">
-                                <h5 class="text-center">${arr[i].pName}</h5>
-                                <img src="${arr[i].pImage}" alt="${arr[i].pName}"/>
-                                <div class="d-flex justify-content-between">
-                                    <h5 class="border-10"><span class="hide">Price:</span> ${arr[i].pPrice}&dollar;</h5>
-                                    <button class="my-btn open-product-btn btn-hover text-capitalize border-10" value="${arr[i].pId}">View more</button>
-                                </div>
-                            </div>`;
+        dynamicProducts += `<div class="product-block shadow-on border-15 border-gray orange-hover catId-${arr[i].pCategory}">
+        <h5 class="text-center">${arr[i].pName}</h5>
+        <img src="${arr[i].pImage}" alt="${arr[i].pName}"/>
+        <div class="d-flex justify-content-between">
+        <h5 class="border-10"><span class="hide">Price:</span> ${arr[i].pPrice}&dollar;</h5>
+        <button class="my-btn open-product-btn btn-hover text-capitalize border-10" value="${arr[i].pId}">View more</button>
+        </div>
+        </div>`;
     }
-
+    
     location.innerHTML = dynamicProducts;
 }
-if(urlPath == "/OrangeBox/index.html" || urlPath == "/OrangeBox/") writeProducts(getNewProductsBlock, 8, newProductsArr);
-if(urlPath == "/OrangeBox/index.html" || urlPath == "/OrangeBox/") writeProducts(getBestSellerBlock, 8, bestSellerArr);
-if(urlPath == "/OrangeBox/products.html") writeProducts(getAllProductsBlock, productsArr.length, productsArr);
+// For github: urlPath == "/OrangeBox/..."
+if(urlPath == "/OrangeBox/index.html" || urlPath == "/OrangeBox/") writeProducts(getNewProductsBlock, newProductsArr, 8);
+if(urlPath == "/OrangeBox/index.html" || urlPath == "/OrangeBox/") writeProducts(getBestSellerBlock, bestSellerArr, 8);
+if(urlPath == "/OrangeBox/products.html") writeProducts(getProductContainer, productsArr, productsArr.length);
 
 
 // Getting product details on button click
@@ -161,18 +168,7 @@ let getOverlay = document.querySelector('#overlay');
 let getModalImage = document.querySelector('#modal-image');
 let getModalProductQuant = document.querySelector('#m-quant');
 
-
-// Successfully added to cart
-let getAddToCartBtn = document.querySelector('#add-to-cart-btn');
-getAddToCartBtn.addEventListener('click', () => {
-    getAddToCartBtn.classList.add("success");
-    getAddToCartBtn.innerHTML = "Successfully added to cart!";
-    setTimeout(() => {
-        getAddToCartBtn.classList.remove("success");
-        getAddToCartBtn.innerHTML = "Add to cart";
-    }, 1500);
-})
-let selectedOpenProductBtn = getOpenProductBtn.forEach((el) => {
+getOpenProductBtn.forEach((el) => {
     el.addEventListener('click', () => {
         let getModalProductName = document.querySelector('#modal-product-name');
         let getModalProducInformation = document.querySelector('#modal-product-information');
@@ -191,7 +187,7 @@ let selectedOpenProductBtn = getOpenProductBtn.forEach((el) => {
         $('#modal-image').css('background-image', `url('${productsArr[index].pImage}')`);
 
         // Calculating total price with event
-        let quantityChange = getModalProductQuant.addEventListener('change', () => {
+        getModalProductQuant.addEventListener('change', () => {
             let quantVal = parseFloat(getModalProductQuant.value);
             let totalPriceString = String(productsArr[index].pPrice * quantVal);
             let dotIndex =  totalPriceString.indexOf('.');
@@ -201,6 +197,18 @@ let selectedOpenProductBtn = getOpenProductBtn.forEach((el) => {
         });
     })
 });
+
+// Successfully added to cart
+let getAddToCartBtn = document.querySelector('#add-to-cart-btn');
+getAddToCartBtn.addEventListener('click', () => {
+    getAddToCartBtn.classList.add("success");
+    getAddToCartBtn.innerHTML = "Successfully added to cart!";
+    setTimeout(() => {
+        getAddToCartBtn.classList.remove("success");
+        getAddToCartBtn.innerHTML = "Add to cart";
+    }, 1500);
+})
+// Close modal on click or on Escape key
 let exitOnEscapeKey = document.addEventListener('keydown', (el) => {
     if(el.key == 'Escape') {
         getModal.classList.add('hide');
@@ -213,6 +221,83 @@ document.querySelector('#modal #close-btn').addEventListener('click', () => {
     getOverlay.classList.remove('overlay-active');
     getModalProductQuant.value = 1;
 });
+
+
+// Filter category
+let getAllCategories = document.querySelectorAll('#category-picker input');
+getAllCategories.forEach( (el) => {
+    el.addEventListener('click', () => {
+        let index = el.value;
+        let getProductBlocks = document.querySelectorAll('.product-block');
+        let productBlockArr = Array.from(getProductBlocks);
+
+        if(el.checked){
+            for(let i in productBlockArr){
+                let productClassName = productBlockArr[i].className;
+                let productClassNameDash = productClassName.lastIndexOf("-");
+                let finalSearch = productClassName.substring(productClassName.length, productClassNameDash + 1);
+
+                if(finalSearch != index) productBlockArr[i].classList.add('hide');
+            }
+            getAllCategories.forEach((el, id) => {
+                let previous = el.previousElementSibling;
+                if(id != index - 1) {
+                    el.disabled = true;
+                    previous.classList.add('greyed-out');
+                } 
+            });
+        }
+        else{
+            productBlockArr.forEach( el => el.classList.remove('hide'));
+            getAllCategories.forEach((el) => {
+                let previous = el.previousElementSibling;
+                el.disabled = false;
+                previous.classList.remove('greyed-out');
+            });
+        }
+    });
+})
+
+
+// Timer for discount
+let getDiscountTablets = document.querySelector('#discount-tablets-timer');
+let getDiscountTabletsDate = document.querySelector('#discount-tablets-date');
+let getDiscountTv = document.querySelector('#discount-tv-timer');
+let getDiscountTvDate = document.querySelector('#discount-tv-date');
+
+function countDownTimer(inputDateStart, inputDateEnd, locationTimer, locationDate){
+    let dateEnd = new Date(inputDateEnd);
+    let _second = 1000;
+    let _minute = _second * 60;
+    let _hour = _minute * 60;
+    let _day = _hour * 24;
+    let timer;
+    locationDate.innerHTML = `From ${inputDateStart} to ${inputDateEnd}`;
+    
+    function showRemaining() {
+        let dateStart = new Date();
+        let distance = dateEnd - dateStart;
+        if (distance < 0) {
+            clearInterval(timer);
+            locationTimer.innerHTML = 'Discount finished!';
+            return;
+        }
+        let days = Math.floor(distance / _day);
+        let hours = Math.floor((distance % _day) / _hour);
+        let minutes = Math.floor((distance % _hour) / _minute);
+        let seconds = Math.floor((distance % _minute) / _second);
+        locationTimer.innerHTML = `${days}d : ${hours}hr : ${minutes}min : ${seconds}s`;
+    }
+    
+    timer = setInterval(showRemaining, 1000);
+}
+if(urlPath == "/OrangeBox/index.html" || urlPath == "/OrangeBox/") countDownTimer('01/17/2023', '02/10/2023',getDiscountTablets, getDiscountTabletsDate);
+if(urlPath == "/OrangeBox/index.html" || urlPath == "/OrangeBox/") countDownTimer('01/17/2023', '02/05/2023',getDiscountTv, getDiscountTvDate);
+
+
+
+
+
 
 
 
@@ -248,9 +333,9 @@ for (let i in productsArr) {
         // console.log(`Name: ${productsArr[i].pName}, Price: ${productsArr[i].pPrice}`);
     }
 }
-console.log("*******************************************");
-console.log("");
-console.log("");
+// console.log("*******************************************");
+// console.log("");
+// console.log("");
 
 let sortedPriceDesc = [];
 for (let i in productsArr) { 
