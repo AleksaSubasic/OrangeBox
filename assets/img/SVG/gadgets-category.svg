@@ -9,8 +9,8 @@
 	.st3{fill:#E9E9E9;stroke:#F39C12;stroke-width:3;stroke-miterlimit:10;}
 	.st4{fill:#FFFFFF;}
 	.st5{font-family:'Poppins-Regular';}
-	.st6{font-size:95.7654px;}
-	.st7{font-size:38.3061px;}
+	.st6{font-size:92px;}
+	.st7{font-size:42px;}
 </style>
 <g>
 	<circle class="st0" cx="489.2" cy="500" r="175"/>
@@ -69,7 +69,7 @@
 	C714.7,272.7,700.7,253.5,679.8,246.4z M678.8,695c0,14.3-12.2,25.9-27.2,25.9H326.8c-15,0-27.2-11.6-27.2-25.9V305.2
 	c0-14.3,12.2-25.9,27.2-25.9h324.8c15,0,27.2,11.6,27.2,25.9V695z"/>
 <g>
-	<text transform="matrix(1 0 0 1 363.1768 501.1387)" class="st4 st5 st6">20:30</text>
-	<text transform="matrix(1 0 0 1 380.7847 558.2554)" class="st4 st5 st7">Friday, 27th</text>
+	<text transform="matrix(1 0 0 1 378.8835 494.5415)" class="st4 st5 st6">20:30</text>
+	<text transform="matrix(1 0 0 1 381.7168 559.5416)" class="st4 st5 st7">Friday, 27th</text>
 </g>
 </svg>
