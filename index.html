@@ -42,7 +42,7 @@
                 <h2 id="carousel-block-title"></h2>
             </div>
             <div id="product-cat-block" class="mb-5vh">
-                <h1 class="text-center title-h1 border-15 mb-5vh shadow-on border-gray">Categories</h1>
+                <h1 class="bg-white text-center title-h1 border-15 mb-5vh shadow-on border-gray">Categories</h1>
                 <div id="categories" class="d-flex flex-column">
                     <div id="product-cat-block-ts" class="d-flex">
                         <!-- Dynamic categories half 1 -->
@@ -74,7 +74,7 @@
                     </div>
                 </div>
             </div>
-            <div id="safety-block" class="mb-10vh">
+            <div id="safety-block" class="bg-white mb-10vh">
                 <div id="safety-blocks" class="d-flex justify-content-between align-items-center shadow-on border-15 border-gray pad-15-0 px-2">
                     <div class="d-flex align-items-center">
                         <img src="assets/img/SVG/orangebox-transport-svg.svg" alt="orangebox-transport-svg"/>
@@ -113,14 +113,14 @@
                 <div class="discount-circle"></div>
                 <div class="discount-text-block position-relative d-flex flex-column justify-content-center">
                     <h2 class="text-center position-relative">Tablet Mania 45%</h2>
-                    <h4 class="text-center position-relative">Get tablet device that you always wanted!</h4>
-                    <h2 class="text-center position-relative">Time expire</h2>
-                    <h4 class="text-center position-relative">Date start - date finish</h4>
+                    <h4 class="text-center position-relative my-text-muted">Get tablet device that you always wanted!</h4>
+                    <h2 id="discount-tablets-timer" class="text-center position-relative"></h2>
+                    <h4 id="discount-tablets-date" class="text-center position-relative my-text-muted"></h4>
                     <button id="discount-btn-1" class="my-btn border-10 btn-hover position-relative text-capitalize">Go to discount</button>
                 </div>
             </div>
             <div id="new-products-block" class="mb-5vh">
-                <h1 class="text-center title-h1 border-15 mb-5vh shadow-on border-gray">New Products</h1>
+                <h1 class="bg-white text-center title-h1 border-15 mb-5vh shadow-on border-gray">New Products</h1>
                 <div class="product-container d-flex flex-wrap justify-content-between">
                     <!-- <div class="product-block shadow-on border-15 border-gray orange-hover">
                         <h5 class="text-center">Product 1</h5>
@@ -136,14 +136,14 @@
                 <div class="discount-circle"></div>
                 <div class="discount-text-block position-relative d-flex flex-column justify-content-center">
                     <h2 class="text-center position-relative">Television Craziness 60%</h2>
-                    <h4 class="text-center position-relative">Now or never!</h4>
-                    <h2 class="text-center position-relative">Time expire</h2>
-                    <h4 class="text-center position-relative">Date start - date finish</h4>
+                    <h4 class="text-center position-relative my-text-muted">Now or never!</h4>
+                    <h2 id="discount-tv-timer" class="text-center position-relative"></h2>
+                    <h4 id="discount-tv-date" class="text-center position-relative my-text-muted"></h4>
                     <button id="discount-btn-1" class="my-btn border-10 btn-hover position-relative text-capitalize">Go to discount</button>
                 </div>
             </div>
-            <div id="best-seller-block" class="position-relative">
-                <h1 class="text-center title-h1 border-15 mb-5vh shadow-on border-gray">Best Sellers</h1>
+            <div id="best-seller-block" class="position-relative mb-5vh">
+                <h1 class="bg-white text-center title-h1 border-15 mb-5vh shadow-on border-gray">Best Sellers</h1>
                 <div class="product-container d-flex flex-wrap justify-content-between mb-5vh">
                    <!-- <div class="product-block shadow-on border-15 border-gray orange-hover">
                         <h5>Product 1</h5>
@@ -151,18 +151,23 @@
                     </div> -->
                 </div>
             </div>
-            <div id="contact-block" class="mb-10vh">
-                <div class="shadow-on border-15 border-gray orange-hover">
-                    Sub to our newsletter
-                </div>
+            <div id="contact-block" class="bg-white shadow-on border-15">
+                <h2 class="text-capitalize text-center p-1">Find out more!</h2>
+                <h3 class="text-center">Subscribe to our newsletter and stay updated.</h3>
+                <form method="get" class="d-flex flex-column">
+                    <div id="nwsEmail-block">
+                        <input type="email" name="nwsEmail" id="nwsEmail" placeholder="Your Email"/>
+                    </div>
+                    <input id="nwsEmail-sub" type="button" class="my-btn btn-hover text-capitalize border-10" value="Subscribe"/>
+                </form>
             </div>
         </div>
     </main>
 
-    <footer class="shadow-on">
+    <footer class="shadow-on bg-white">
         <div class="container d-flex justify-content-between py-5">
             <div id="footer-ls" class="d-flex flex-column">
-                <h4 class="text-capitalize">OrangeBox.</h4>
+                <h4 class="text-capitalize">OrangeBox</h4>
                 <p>An online retailer that makes it simpler for shoppers to find their preferred products more quickly.</p>
             </div>
             <div id="footer-ms">
