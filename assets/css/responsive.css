@@ -30,6 +30,11 @@
         margin-left: 35%;
         width: 33%;
     }
+    .discount-circle{
+        top: -40px;
+        width: 160px;
+        height: 160px;
+    }
 }
 @media screen and (max-width: 1200px){
     .cat-block{
@@ -53,9 +58,6 @@
     .modal-block{
         width: 350px;
     }
-    /* #modal-product-information::before, #modal-product-information, #color-picker-block h5{
-        font-size: 1rem;
-    } */
     #modal-block-ts h5, #modal-product-information::before, #modal-block-bs h5, #modal-quantity{
         font-size: 1rem;
     }
@@ -67,6 +69,17 @@
     }
     #m-quant{
         width: 40px;
+    }
+    #discount-btn-1, #discount-btn-2, #nwsEmail-sub{
+        font-size: 1rem;
+    }
+    .discount-circle{
+        top: -40px;
+        width: 140px;
+        height: 140px;
+    }
+    .discount-text-block{
+        width: 72%;
     }
 }
 @media screen and (max-width: 992px){
@@ -133,6 +146,18 @@
     #close-btn{
         width: 42px;
         height: 42px;
+    }
+    #discount-btn-1, #discount-btn-2{
+        font-size: 0.85rem;
+    }
+    .discount-text-block h2{
+        font-size: 1.8rem;
+    }
+    .discount-text-block .my-text-muted{
+        font-size: 1rem;
+    }
+    #contact-block{
+        width: 100%;
     }
 }
 @media screen and (max-width: 765px) {
@@ -208,6 +233,19 @@
         width: 35%;
         height: 3px;
     }
+    .discount-text-block h2{
+        font-size: 1.3rem;
+    }
+    .discount-text-block .my-text-muted{
+        font-size: 0.8rem;
+    }
+    .discount-circle{
+        width: 120px;
+        height: 120px;
+    }
+    #contact-block h3{
+       font-size: 1.2rem;
+    }
 }
 @media screen and (max-width: 576px){
     #product-cat-block-ts .d-flex, #product-cat-block-bs .d-flex{
@@ -246,15 +284,50 @@
     #footer-socials{
         justify-content: center;
     }
+    .discount-text-block{
+        width: 80%;
+    }
+    .discount-circle{
+        left: 6%;
+    }
 }
 @media screen and (max-width: 472px) {
-    .product-block{
+    .product-block, .modal-block{
         width: 100%;
     }
     #modal{
         width: 95%;
     }
-    .modal-block{
+    .discount-text-block{
+        width: 85%;
+        padding-left: 30px;
+    }
+    .discount-circle{
+        left: 6%;
+        width: 100px;
+        height: 100px;
+    }
+}
+@media screen and (max-width: 425px) {
+    .product-block, .modal-block{
         width: 100%;
+    }
+    #modal{
+        width: 95%;
+    }
+    .discount-text-block h2{
+        font-size: 1.1rem;
+    }
+    .discount-text-block .my-text-muted{
+        font-size: 0.75rem;
+    }
+    .discount-text-block{
+        width: 85%;
+        padding-left: 30px;
+    }
+    .discount-circle{
+        left: 6%;
+        width: 100px;
+        height: 100px;
     }
 }
