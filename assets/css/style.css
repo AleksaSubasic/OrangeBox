@@ -10,6 +10,7 @@
     --gray-out: #6c757d;
     --blue: #3f84de;
     --green: #32cf61;
+    --green-darker: #24893e;
 }
 *{
     padding: 0px;
@@ -142,7 +143,7 @@ nav{
     padding: 25px 0px !important;
 }
 .nav-link, .nav-logo{
-    padding: 0px 30px !important;
+    padding: 0px 25px !important;
     font-size: 1.1rem;
 }
 .nav-logo{
@@ -150,41 +151,32 @@ nav{
 }
 .nav-link:hover, .nav-logo:hover{
     font-weight: 400;
+    border: 2px solid var(--orange);
 }
 .nav-item{
     margin: 0px 10px;
 }
-.nav-link:hover{
-    border: 2px solid var(--orange);
-}
 .navbar-toggler{
     margin-left: auto;
+}
+.navbar-nav li a{
+    color: var(--black);
+}
+.navbar-nav li a img, .nav-logo img{
+    transition: 0.8s;
+    width: 30px;
 }
 /* Header END */
 
 
 /* Main */
-/* Carousel - Slider */
-#carousel-block{
-    position: relative;
-    margin-top: 13vh;
-    height: 75vh;
-    /* border: 3px solid var(--black); */
-    box-shadow: 0 8px 32px 0 rgb(0 0 0 / 10%);
-}
-#carousel-block-image{
-    width: 100%;
-    height: 100%;
-    border-radius: inherit;
-}
-#carousel-block-title{
+/* Carousel */
+.carousel-link-btn{
     position: absolute;
-    bottom: 3%;
-    left: 50%;
-    transform: translate(-50%);
-    padding: 5px 30px;
-    border-radius: inherit;
-    /* background-color: #f39d1275; */
+    right: 300px;
+    bottom: 220px;
+    font-size: 1.5rem;
+    background-color: var(--green-darker) !important;
 }
 
 /* Categories */
@@ -271,8 +263,14 @@ nav{
     border: 3px solid var(--gray);
     transition: 0.4s;
 }
-#discount-btn-1{
+#discount-btn-1, #discount-btn-2{
     margin: 4vh auto;
+}
+#discount-btn-1{
+    background-color: var(--green);
+}
+#discount-btn-2{
+    background-color: var(--blue);
 }
 #discount-block-1:hover > .discount-circle, #discount-block-1:hover > .discount-text-block::before, #discount-block-2:hover > .discount-circle, #discount-block-2:hover > .discount-text-block::before{
     border-color: var(--orange);
@@ -280,8 +278,6 @@ nav{
 
 /* Products */
 .product-container{
-    /* width: 97%; */
-    /* border: 2px solid; */
     margin: 0px auto;
 }
 .product-block{
@@ -325,19 +321,6 @@ nav{
 .open-product-btn{
     margin-right: 3%;
 }
-#category-picker{
-    margin-bottom: 4vh;
-}
-#category-picker label{
-    padding: 3px 10px;
-    background-color: var(--gray);
-    border-radius: 5px; 
-    margin-right: 10px;
-}
-#category-picker input{
-    margin-right: 2vw;
-    accent-color: var(--orange);
-}
 
 /* Newsletter block */
 #contact-block{
@@ -378,7 +361,6 @@ nav{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border-radius: 15px;
     z-index: 1032;
 }
 .modal-block{
@@ -485,7 +467,7 @@ nav{
 #add-to-cart-btn:hover{
     border: 3px solid var(--gray);
 }
-#close-btn{
+.close-btn{
     width: 45px;
     height: 45px;
     top: -15px;
@@ -505,11 +487,53 @@ nav{
     transform: rotate(45deg);
     margin-left: -3px;
 }
-#close-btn:hover{
+.close-btn:hover{
     background-color: var(--red-orange);
     transform: scale(1.1, 1.1);
 }
- 
+
+/* Modal - Filter */
+#filter-product{
+    padding: 5px;
+    margin-bottom: 2vh;
+    background-color: var(--orange);
+}
+#filter-btn, #sort-btn{
+    padding: 3px 30px;
+}
+#filter-btn, #selSort, #filter-product{
+    border-radius: 30px;
+    outline: none;
+}
+#filter-sort-modal{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1032;
+    border: 3px solid var(--gray);
+    border-color: var(--orange);
+}
+#filter-sort-modal .close-btn{
+    top: -25px;
+    right: -25px;
+}
+#filter-sort-head h3{
+    padding: 5px 25px;
+    border-radius: 10px 10px 0px 0px;
+}
+#category-picker div{
+    padding: 10px;
+    margin: 0px 15px;
+    border-bottom: 3px solid var(--gray);
+}
+#category-picker div:last-child{
+    border: none;
+}
+#category-picker input{
+    accent-color: var(--orange);
+}
+
 /* Modal - Overlay */
 #overlay{
     position: fixed;
@@ -550,7 +574,7 @@ footer{
 }
 /* Footer END */
 
-.cat-image, .cat-image .text-center, .product-block, .product-block .text-center, .discount-block, #contact-block, #contact-block h2, .color-picker-blocks, #add-to-cart-btn, #close-btn, #overlay, .my-btn, ul li a, footer #copyright a{
+.cat-image, .cat-image .text-center, .product-block, .product-block .text-center, .discount-block, #contact-block, #contact-block h2, .color-picker-blocks, #add-to-cart-btn, .close-btn, #overlay, .my-btn, ul li a, footer #copyright a{
     transition: 0.4s !important;
 }
 .discount-text-block .my-text-muted, .discount-block .my-btn, #nwsEmail-block input[type="email"], #nwsEmail-sub, #add-to-cart-btn, #copyright h5, #copyright a{
@@ -562,13 +586,13 @@ footer{
 .my-link-active, .nav-link:hover, .nav-logo:hover{
     color: var(--orange);
 }
-.btn-hover:hover, #carousel-block-title, #contact-block:hover h2, #modal-product-information::before, #copyright, #copyright h5, #copyright a, #add-to-cart-btn, #modal-product-name, .product-block:hover > .text-center, .cat-image:hover > .text-center, #contact-block h2{
+.btn-hover:hover, #carousel-block-title, #contact-block:hover h2, #modal-product-information::before, #copyright, #copyright h5, #copyright a, #add-to-cart-btn, #modal-product-name, .product-block:hover > .text-center, .cat-image:hover > .text-center, #contact-block h2, .carousel-link-btn, #discount-btn-1, #discount-btn-2, #filter-sort-head h3{
     color: var(--white);
 }
-.btn-hover:hover, #carousel-block-title, .product-block:hover > .text-center, .cat-image:hover > .text-center, #modal-product-name, #modal-product-information::before, #color-orange, #add-to-cart-btn, #copyright{
+.btn-hover:hover, #carousel-block-title, .product-block:hover > .text-center, .cat-image:hover > .text-center, #modal-product-name, #modal-product-information::before, #color-orange, #add-to-cart-btn, #copyright, #filter-sort-head h3{
     background-color: var(--orange);
 }
-.cat-block, .block-long, .product-block, .discount-circle, .discount-text-block::before, #modal, #modal-product-information, #color-white, .product-price, #m-quant, #close-btn:hover > .close-cross{
+.cat-block, .block-long, .product-block, .discount-circle, .discount-text-block::before, #modal, #modal-product-information, #color-white, .product-price, #m-quant, .close-btn:hover > .close-cross, #filter-sort-modal, footer, #product-cat-block h1, #safety-block, #new-products-block h1, #best-seller-block h1, #contact-block{
     background-color: var(--white);
 }
 .product-block, #modal-image, .discount-circle{
