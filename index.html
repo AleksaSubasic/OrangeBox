@@ -4,6 +4,8 @@
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/img/SVG/logo-ico.ico" type="image/x-icon"/>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/bootstrap-5.2.2-dist/css/bootstrap.css"/>
     <!-- Main CSS -->
@@ -18,7 +20,7 @@
     <header>
         <nav id="nav" class="navbar fixed-top navbar-expand-md bg-light shadow-on">
             <div class="container-fluid">
-                <a class="nav-logo" href="#">OrangeBox</a>
+                <a class="link-logo nav-logo fw-bold border-15" href="index.html">Orange <img src="assets/img/SVG/logo-closed.svg" alt="logo-svg.svg"/></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
@@ -26,7 +28,9 @@
                     <ul class="navbar-nav mb-lg-0">
                         <li class="nav-item"><a class="nav-link border-15 my-link-active" href="#">Home</a></li>
                         <li class="nav-item"><a class="nav-link border-15" href="products.html">Products</a></li>
-                        <li class="nav-item"><a class="nav-link fw-bold border-15" href="index.html">OrangeBox</a></li>
+                        <li class="nav-item">
+                            <a class="link-logo nav-link fw-bold border-15" href="index.html">Orange <img src="assets/img/SVG/logo-closed.svg" alt="logo-svg.svg"/></a>
+                        </li>
                         <li class="nav-item"><a class="nav-link border-15" href="contact.html">Contact</a></li>
                         <li class="nav-item"><a class="nav-link border-15" href="about-us.html">About us</a></li>
                     </ul>
@@ -37,12 +41,44 @@
 
     <main>
         <div class="container">
-            <div id="carousel-block" class="border-15 mb-5vh">
-                <!-- <img id="carousel-block-image" src="assets/img/console-1.png" alt="alt_img_1.jpg"/> -->
-                <h2 id="carousel-block-title"></h2>
+            <!-- Carousel wrapper -->
+            <div id="carouselExampleCaptions" class="carousel slide mb-5vh" data-bs-ride="false">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner border-15">
+                  <div class="carousel-item active">
+                    <img src="assets/img/carousel-1.png" class="d-block w-100" alt="carousel-1.png" data-bs-interval="1500" />
+                    <div class="carousel-caption d-md-block">
+                      <h5>What do you plan to buy?</h5>
+                      <p>There are many goods, but we are confident you will discover the one you need.</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="assets/img/carousel-2.png" class="d-block w-100" alt="carousel-2.png" data-bs-interval="1500" />
+                    <button class="carousel-link-btn my-btn btn-hover text-capitalize border-15">Check out consoles</button>
+                    <div class="carousel-caption d-md-block">
+                      <h5>Play the games as they should be played.</h5>
+                      <p>"I'm Commander Shepard, and this is my favorite store on the Citadel!" - Mass Effect 2</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="assets/img/carousel-3.png" class="d-block w-100" alt="carousel-3.png" data-bs-interval="1500" />
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
             </div>
             <div id="product-cat-block" class="mb-5vh">
-                <h1 class="bg-white text-center title-h1 border-15 mb-5vh shadow-on border-gray">Categories</h1>
+                <h1 class="text-center title-h1 border-15 mb-5vh shadow-on border-gray">Categories</h1>
                 <div id="categories" class="d-flex flex-column">
                     <div id="product-cat-block-ts" class="d-flex">
                         <!-- Dynamic categories half 1 -->
@@ -74,7 +110,7 @@
                     </div>
                 </div>
             </div>
-            <div id="safety-block" class="bg-white mb-10vh">
+            <div id="safety-block" class="mb-10vh">
                 <div id="safety-blocks" class="d-flex justify-content-between align-items-center shadow-on border-15 border-gray pad-15-0 px-2">
                     <div class="d-flex align-items-center">
                         <img src="assets/img/SVG/orangebox-transport-svg.svg" alt="orangebox-transport-svg"/>
@@ -120,7 +156,7 @@
                 </div>
             </div>
             <div id="new-products-block" class="mb-5vh">
-                <h1 class="bg-white text-center title-h1 border-15 mb-5vh shadow-on border-gray">New Products</h1>
+                <h1 class="text-center title-h1 border-15 mb-5vh shadow-on border-gray">New Products</h1>
                 <div class="product-container d-flex flex-wrap justify-content-between">
                     <!-- <div class="product-block shadow-on border-15 border-gray orange-hover">
                         <h5 class="text-center">Product 1</h5>
@@ -139,11 +175,11 @@
                     <h4 class="text-center position-relative my-text-muted">Now or never!</h4>
                     <h2 id="discount-tv-timer" class="text-center position-relative"></h2>
                     <h4 id="discount-tv-date" class="text-center position-relative my-text-muted"></h4>
-                    <button id="discount-btn-1" class="my-btn border-10 btn-hover position-relative text-capitalize">Go to discount</button>
+                    <button id="discount-btn-2" class="my-btn border-10 btn-hover position-relative text-capitalize">Go to discount</button>
                 </div>
             </div>
             <div id="best-seller-block" class="position-relative mb-5vh">
-                <h1 class="bg-white text-center title-h1 border-15 mb-5vh shadow-on border-gray">Best Sellers</h1>
+                <h1 class="text-center title-h1 border-15 mb-5vh shadow-on border-gray">Best Sellers</h1>
                 <div class="product-container d-flex flex-wrap justify-content-between mb-5vh">
                    <!-- <div class="product-block shadow-on border-15 border-gray orange-hover">
                         <h5>Product 1</h5>
@@ -151,7 +187,7 @@
                     </div> -->
                 </div>
             </div>
-            <div id="contact-block" class="bg-white shadow-on border-15">
+            <div id="contact-block" class="shadow-on border-15">
                 <h2 class="text-capitalize text-center p-1">Find out more!</h2>
                 <h3 class="text-center">Subscribe to our newsletter and stay updated.</h3>
                 <form method="get" class="d-flex flex-column">
@@ -164,7 +200,7 @@
         </div>
     </main>
 
-    <footer class="shadow-on bg-white">
+    <footer class="shadow-on">
         <div class="container d-flex justify-content-between py-5">
             <div id="footer-ls" class="d-flex flex-column">
                 <h4 class="text-capitalize">OrangeBox</h4>
@@ -231,7 +267,7 @@
                 </div>
             </div>
         </div>
-        <button id="close-btn" class="position-absolute d-flex justify-content-center align-items-center border-15">
+        <button class="close-btn position-absolute d-flex justify-content-center align-items-center border-15">
             <div class="close-cross"></div>
             <div class="close-cross"></div>
         </button>

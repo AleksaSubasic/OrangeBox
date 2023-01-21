@@ -18,7 +18,7 @@
     <header>
         <nav id="nav" class="navbar fixed-top navbar-expand-md bg-light shadow-on">
             <div class="container-fluid">
-                <a class="nav-logo" href="#">OrangeBox</a>
+                <a class="link-logo nav-logo fw-bold border-15" href="index.html">Orange <img src="assets/img/SVG/logo-closed.svg" alt="logo-svg.svg"/></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
@@ -26,7 +26,9 @@
                     <ul class="navbar-nav mb-lg-0">
                         <li class="nav-item"><a class="nav-link border-15" href="index.html">Home</a></li>
                         <li class="nav-item"><a class="nav-link border-15 my-link-active" href="#">Products</a></li>
-                        <li class="nav-item"><a class="nav-link fw-bold border-15" href="index.html">OrangeBox</a></li>
+                        <li class="nav-item">
+                            <a class="link-logo nav-link fw-bold border-15" href="index.html">Orange <img src="assets/img/SVG/logo-closed.svg" alt="logo-svg.svg"/></a>
+                        </li>
                         <li class="nav-item"><a class="nav-link border-15" href="contact.html">Contact</a></li>
                         <li class="nav-item"><a class="nav-link border-15" href="about-us.html">About us</a></li>
                     </ul>
@@ -37,9 +39,14 @@
 
     <main>
         <div class="container">
-            <div id="category-picker" class="d-flex align-items-center">
-                <!-- <label for="catHeadphones">Headphones</label>
-                <input type="checkbox" name="category" id="catHeadphones"/> -->
+            <div id="filter-product" class="d-flex justify-content-between">
+                <button id="filter-btn" class="my-btn btn-hover text-capitalize">Filter by category</button>
+                <!-- <button id="sort-btn" class="my-btn btn-hover text-capitalize">Sort by price</button> -->
+                <select name="selSort" id="selSort" class="my-btn btn-hover text-capitalize">
+                    <option value="def" selected>Sort by default</option>
+                    <option value="asc">From low to high</option>
+                    <option value="desc">From high to low</option>
+                </select>
             </div>
             <div id="all-products">
                 <div class="product-container d-flex flex-wrap justify-content-between">
@@ -56,7 +63,7 @@
         </div>
     </main>
 
-    <footer class="shadow-on bg-white position-absolute">
+    <footer class="shadow-on position-absolute">
         <div class="container d-flex justify-content-between py-5">
             <div id="footer-ls" class="d-flex flex-column">
                 <h4 class="text-capitalize">OrangeBox.</h4>
@@ -92,7 +99,7 @@
     </footer>
 
     <!-- Modal -->
-    <div id="modal" class="d-flex justify-content-between p-3 shadow-on hide">
+    <div id="modal" class="d-flex justify-content-between p-3 shadow-on border-15 hide">
         <div id="modal-image" class="modal-block">
             <!-- product image -->
         </div>
@@ -123,12 +130,20 @@
                 </div>
             </div>
         </div>
-        <button id="close-btn" class="position-absolute d-flex justify-content-center align-items-center border-15">
+        <button class="close-btn position-absolute d-flex justify-content-center align-items-center border-15">
             <div class="close-cross"></div>
             <div class="close-cross"></div>
         </button>
     </div>
     <div id="overlay"></div>
+    <div id="filter-sort-modal" class="border-15 shadow-on hide">
+        <div id="filter-sort-head"> <h3>Filter by category:</h3> </div>
+        <div id="category-picker"></div>
+        <button class="close-btn position-absolute d-flex justify-content-center align-items-center border-15">
+            <div class="close-cross"></div>
+            <div class="close-cross"></div>
+        </button>
+    </div>
 
     <!-- Bootstrap JavaScript -->
     <script type="text/javascript" src="assets/bootstrap-5.2.2-dist/js/bootstrap.bundle.js"></script>
