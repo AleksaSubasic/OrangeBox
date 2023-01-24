@@ -22,7 +22,7 @@ svg{
     font-family: 'Poppins', sans-serif;
 }
 header{
-    margin-bottom: 12vh;
+    margin-bottom: 120px;
 }
 body{
     position: relative;
@@ -60,6 +60,17 @@ p{
 button{
     outline: none !important;
 }
+::-moz-selection {
+    color: var(--orange);
+    background: var(--gray);
+}  
+::selection {
+    color: var(--orange);
+    background: var(--gray);
+}
+div{
+    border: 1px solid;
+}
 
 /* Custom classes */
 .shadow-on{
@@ -73,6 +84,9 @@ button{
 }
 .border-gray{
     border: 3px solid var(--gray);
+}
+.border-orange{
+    border: 3px solid var(--orange);
 }
 .more-shadow-on{
     box-shadow: 0 8px 32px 0 rgb(0 0 0 / 15%);
@@ -130,8 +144,6 @@ button{
     transform: none;
     border: 3px solid var(--gray);
 }
-
-
 /* Custom classes END */
 
 
@@ -323,24 +335,23 @@ nav{
 }
 
 /* Newsletter block */
-#contact-block{
+#newsletter-block{
     width: 80%;
     margin: 0px auto 10vh;
     transform: scale(1.015,1.015);
     box-shadow: 0 8px 32px 0 rgb(243 156 18 / 10%);
-    border: 3px solid #F39C12;
 }
-#contact-block h2{
+#newsletter-block h2{
     width: 80%;
     margin: 0px auto;
     border-radius: 0px 0px 10px 10px;
     background: var(--orange);
 }
-#contact-block h3{
+#newsletter-block h3{
     margin-top: 2vh;
     font-size: 1.5rem;
 }
-#nwsEmail-block, #nwsEmail-sub{
+#nwsEmail-block{
     margin: 2vh auto;
 }
 #nwsEmail-block input[type="email"]{
@@ -350,12 +361,8 @@ nav{
     border-radius: 10px;
     outline-color: var(--orange);
 }
-#nwsEmail-sub{
-    margin-top: 0px;
-    width: 150px;
-}
 
-/* Modal */
+/* Modals */
 #modal{
     position: fixed;
     top: 50%;
@@ -377,7 +384,7 @@ nav{
     margin-right: 2vh;
 }
 
-/* Modal - Top */
+/* Modal Product - Top */
 #modal-block-ts{
     padding: 10px;
     border-radius: 10px;
@@ -434,7 +441,7 @@ nav{
     background-color: var(--green);
 }
 
-/* Modal - Bottom */
+/* Modal Product - Bottom */
 #modal-price, #modal-quantity, .modal-btn{
     padding: 3px;
     font-size: 1.1rem;
@@ -498,14 +505,14 @@ nav{
     margin-bottom: 2vh;
     background-color: var(--orange);
 }
-#filter-btn, #sort-btn{
+#filter-btn{
     padding: 3px 30px;
 }
-#filter-btn, #selSort, #filter-product{
+#filter-btn, #filter-product{
     border-radius: 30px;
     outline: none;
 }
-#filter-sort-modal{
+#filter-modal{
     position: fixed;
     top: 50%;
     left: 50%;
@@ -514,7 +521,7 @@ nav{
     border: 3px solid var(--gray);
     border-color: var(--orange);
 }
-#filter-sort-modal .close-btn{
+#filter-modal .close-btn{
     top: -25px;
     right: -25px;
 }
@@ -534,6 +541,78 @@ nav{
     accent-color: var(--orange);
 }
 
+/* Contact Us */
+#contact-us-ls, #contact-us-rs{
+    width: 50%;
+}
+#contact-us-ls{
+    text-align: center;
+    background-image: url('../img/contact-us-overlay2.png');
+    background-size: cover;
+    border-radius: 15px 0px 0px 15px;
+}
+#contact-us-ls p{
+    color: var(--gray);
+}
+#contact-us-rs{
+    padding: 0px 15px;
+    border-radius: 0px 15px 15px 0px;
+}
+#contact-us-rs form > h2{
+    margin: 10px 0px;
+}
+#contact-us-rs form > div label{
+    font-size: 1.2rem;
+    margin: 10px 0px;
+}
+#contact-us-rs form input, #contact-us-rs form textarea{
+    border: none;
+    outline: none;
+    border-top: 3px solid var(--gray);
+    padding: 10px;
+    border-radius: 0px 0px 11px 11px;
+}
+#inputFName{
+    border-right: 3px solid var(--gray) !important;
+    border-radius: 0px 0px 0px 11px !important;
+}
+#inputLName{
+    border-radius: 0px 0px 11px 0px !important;
+}
+#inputSubmit{
+    margin: auto auto 5vh auto;
+    width: 35% !important;
+    padding: 3px 15px !important;
+    border: 3px solid transparent !important;
+    border-radius: 15px !important;
+}
+#inputSubmit:hover{
+    border: 3px solid var(--gray) !important;
+}
+
+/* About Us */
+.about-us-ls, .about-us-rs{
+    width: 50%;
+    height: 350px;
+}
+.about-us-ls{
+    margin-right: 2vw;
+}
+#about-us .border-orange{
+    background-image: url('../img/online-shopping.jpg');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#about-us-ms .border-orange{
+    background-image: url('../img/kyoto.jpg');
+}
+#about-us-bs .border-orange{
+    background-image: url('../img/Logo-2.png');
+    background-color: #e2b588;
+}
+
+
 /* Modal - Overlay */
 #overlay{
     position: fixed;
@@ -549,6 +628,17 @@ nav{
 .overlay-active{
     opacity: 1 !important;
     pointer-events: all !important;
+}
+
+/* Validation */
+.text-val-error{
+    display: block;
+    margin: 5px auto;
+    padding: 3px 5px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--red-orange);
+    background-color: #ffd8d7;
 }
 /* Main END */
 
@@ -574,25 +664,25 @@ footer{
 }
 /* Footer END */
 
-.cat-image, .cat-image .text-center, .product-block, .product-block .text-center, .discount-block, #contact-block, #contact-block h2, .color-picker-blocks, #add-to-cart-btn, .close-btn, #overlay, .my-btn, ul li a, footer #copyright a{
+.cat-image, .cat-image .text-center, .product-block, .product-block .text-center, .discount-block, #newsletter-block, #newsletter-block h2, .color-picker-blocks, #add-to-cart-btn, .close-btn, #overlay, .my-btn, ul li a, footer #copyright a, #about-us .border-orange{
     transition: 0.4s !important;
 }
-.discount-text-block .my-text-muted, .discount-block .my-btn, #nwsEmail-block input[type="email"], #nwsEmail-sub, #add-to-cart-btn, #copyright h5, #copyright a{
+.discount-text-block .my-text-muted, .discount-block .my-btn, #nwsEmail-block input[type="email"], #inputSubmit, #add-to-cart-btn, #copyright h5, #copyright a, #contact-us-ls .my-text-muted, #about-us .p-3 p{
     font-size: 1.2rem;
 }
-.block-long, #add-to-cart-btn, #modal-block-bs, footer{
+.block-long, #add-to-cart-btn, #modal-block-bs, footer, #contact-us-rs form input, #contact-us-rs form textarea, .text-val-error{
     width: 100%;
 }
-.my-link-active, .nav-link:hover, .nav-logo:hover{
+.my-link-active, .nav-link:hover, .nav-logo:hover, #about-us .p-3 span{
     color: var(--orange);
 }
-.btn-hover:hover, #carousel-block-title, #contact-block:hover h2, #modal-product-information::before, #copyright, #copyright h5, #copyright a, #add-to-cart-btn, #modal-product-name, .product-block:hover > .text-center, .cat-image:hover > .text-center, #contact-block h2, .carousel-link-btn, #discount-btn-1, #discount-btn-2, #filter-sort-head h3{
+.btn-hover:hover, #carousel-block-title, #newsletter-block:hover h2, #modal-product-information::before, #copyright, #copyright h5, #copyright a, #add-to-cart-btn, #modal-product-name, .product-block:hover > .text-center, .cat-image:hover > .text-center, #newsletter-block h2, .carousel-link-btn, #discount-btn-1, #discount-btn-2, #filter-sort-head h3, #contact-us-ls h3{
     color: var(--white);
 }
 .btn-hover:hover, #carousel-block-title, .product-block:hover > .text-center, .cat-image:hover > .text-center, #modal-product-name, #modal-product-information::before, #color-orange, #add-to-cart-btn, #copyright, #filter-sort-head h3{
     background-color: var(--orange);
 }
-.cat-block, .block-long, .product-block, .discount-circle, .discount-text-block::before, #modal, #modal-product-information, #color-white, .product-price, #m-quant, .close-btn:hover > .close-cross, #filter-sort-modal, footer, #product-cat-block h1, #safety-block, #new-products-block h1, #best-seller-block h1, #contact-block{
+.cat-block, .block-long, .product-block, .discount-circle, .discount-text-block::before, #modal, #modal-product-information, #color-white, .product-price, #m-quant, .close-btn:hover > .close-cross, #filter-modal, footer, #product-cat-block h1, #safety-block, #new-products-block h1, #best-seller-block h1, #newsletter-block, #contact-us-rs, .about-us-ls, .about-us-rs{
     background-color: var(--white);
 }
 .product-block, #modal-image, .discount-circle{

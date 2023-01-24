@@ -10,6 +10,7 @@
     }
     .product-block{
         width: 260px;
+        margin-bottom: 2vh;
     }
     #safety-blocks img{
         width: 40px;
@@ -34,6 +35,9 @@
         top: -40px;
         width: 160px;
         height: 160px;
+    }
+    #about-us .p-3 p{
+        font-size: 1.15rem;
     }
 }
 @media screen and (max-width: 1200px){
@@ -81,6 +85,15 @@
     .discount-text-block{
         width: 72%;
     }
+    #about-us .p-3 p{
+        font-size: 1.05rem;
+    }
+    #about-us-ms .about-us-ls{
+        background-position: center right;
+    }
+    #about-us-bs .about-us-rs{
+        background-size: 150%;
+    }
 }
 @media screen and (max-width: 992px){
     #navbarSupportedContent ul li a, #navbarSupportedContent a{
@@ -91,7 +104,7 @@
         align-items: center;
     }
     #product-cat-block-ts{
-        margin-bottom: 5vh;
+        margin-bottom: 2vh;
     }
     .cat-block, .block-long, .product-block{
         width: 161px;
@@ -156,11 +169,14 @@
     .discount-text-block .my-text-muted, .carousel-caption h5{
         font-size: 1rem;
     }
-    #contact-block{
+    #newsletter-block{
         width: 100%;
     }
     .carousel-caption p{
         font-size: 0.8rem;
+    }
+    #about-us .p-3 p{
+        font-size: 0.9rem;
     }
 }
 @media screen and (max-width: 765px) {
@@ -181,7 +197,7 @@
         flex-wrap: wrap;
     }
     #product-cat-block-ts .block-long{
-        margin-top: 5vh;
+        margin-top: 2vh;
     }
     #product-cat-block-ts .block-long, #product-cat-block-bs .block-long{
         width: 100%;
@@ -191,7 +207,7 @@
         width: 55%;
     }
     #product-cat-block-bs .block-long{
-        margin-bottom: 5vh;
+        margin-bottom: 2vh;
     }
     #product-cat-block-bs .d-flex .cat-block:first-child{
         margin-left: 0px;
@@ -243,11 +259,29 @@
         width: 120px;
         height: 120px;
     }
-    #contact-block h3{
+    #newsletter-block h3{
        font-size: 1.2rem;
     }
     .carousel-caption p{
         font-size: 0.6rem;
+    }
+    footer{
+        bottom: -500px;
+    }
+    #contact-us-ls h3{
+        font-size: 1.2rem;
+    }
+    #contact-us-ls p, #contact-us-rs form input, #contact-us-rs form textarea{
+        font-size: 0.8rem;
+    }
+    #contact-us-rs form h2{
+        font-size: 1.3rem;
+    }
+    #contact-us-rs form label{
+        font-size: 1rem !important;
+    }
+    #about-us .p-3 p{
+        font-size: 0.75rem;
     }
 }
 @media screen and (max-width: 576px){
@@ -261,7 +295,7 @@
         margin-bottom: 0px;
     }
     .cat-block, .block-long{
-        margin: 0px 0px 5vh 0px !important;
+        margin: 0px 0px 2vh 0px !important;
     }
     .cat-block img{
         margin-left: 35%;
@@ -299,6 +333,48 @@
     .carousel-indicators{
         margin-bottom: 0.2rem;
     }
+    footer{
+        bottom: -600px;
+    }
+    #contact-us{
+        flex-direction: column;
+    }
+    #contact-us-rs, #contact-us-ls{
+        width: 100%;
+    }
+    #contact-us-ls{
+        padding: 50px;
+        border-radius: 15px 15px 0px 0px;
+    }
+    #contact-us-rs{
+        border-radius: 0px 0px 15px 15px;
+    }
+    #about-us-ts, #about-us-ms, #about-us-bs{
+        flex-direction: column;
+        margin: 0px;
+    }
+    #about-us-ts, #about-us-bs{
+        flex-direction: column-reverse;
+    }
+    .about-us-ls, .about-us-rs{
+        width: 100%;
+        margin-bottom: 2vh;
+    }
+    #filter-modal{
+        width: 75%;
+    }
+    #about-us .p-3{
+        height: auto;
+    }
+    #about-us .p-3 p{
+        font-size: 1.1rem;
+    }
+
+}
+@media screen and (max-width: 500px) {
+    #about-us .p-3 p{
+        font-size: 1.05rem;
+    }
 }
 @media screen and (max-width: 472px) {
     .product-block, .modal-block{
@@ -315,6 +391,11 @@
         left: 6%;
         width: 100px;
         height: 100px;
+    }
+}
+@media screen and (max-width: 460px) {
+    #about-us .p-3 p{
+        font-size: 1rem;
     }
 }
 @media screen and (max-width: 425px) {
@@ -338,5 +419,8 @@
         left: 6%;
         width: 100px;
         height: 100px;
+    }
+    #newsletter-block h3{
+        font-size: 1.1rem;
     }
 }
