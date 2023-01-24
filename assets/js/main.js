@@ -105,7 +105,7 @@ function writeCategories(location, arr, layoutType, part){
 }
 if(urlPath == "/OrangeBox/index.html" || urlPath == "/OrangeBox/") writeCategories(getCategoryTS, categoriesArr, 2, 1);
 if(urlPath == "/OrangeBox/index.html" || urlPath == "/OrangeBox/") writeCategories(getCategoryBS, categoriesArr, 2, 2);
-if(urlPath == "/OrangeBox/products.html") writeCategories(getCategoryPicker, categoriesArr, 1, null);
+if(urlPath == "/products.html") writeCategories(getCategoryPicker, categoriesArr, 1, null);
 
 // Products dynamic writing
 let getNewProductsBlock = document.querySelector('#new-products-block .product-container');
@@ -161,8 +161,8 @@ function discountTimer(inputDateStart, inputDateEnd, locationTimer, locationDate
     
     timer = setInterval(showRemaining, 1000);
 }
-if(urlPath == "/OrangeBox/index.html" || urlPath == "/OrangeBox/") discountTimer('01/17/2023', '02/10/2023',getDiscountTablets, getDiscountTabletsDate);
-if(urlPath == "/OrangeBox/index.html" || urlPath == "/OrangeBox/") discountTimer('01/17/2023', '02/05/2023',getDiscountTv, getDiscountTvDate);
+if(urlPath == "/index.html" || urlPath == "/") discountTimer('01/17/2023', '02/10/2023',getDiscountTablets, getDiscountTabletsDate);
+if(urlPath == "/index.html" || urlPath == "/") discountTimer('01/17/2023', '02/05/2023',getDiscountTv, getDiscountTvDate);
 
 // Getting product details on button click
 let getOpenProductBtn = document.querySelectorAll('.open-product-btn');
@@ -258,7 +258,7 @@ getAllCategories.forEach( (el) => {
 // Close modal on click or on Escape key
 let exitOnEscapeKey = document.addEventListener('keydown', (el) => {
     if(el.key == 'Escape') {
-        if(urlPath == '/OrangeBox/products.html') getFilterModal.classList.add('hide');
+        if(urlPath == '/products.html') getFilterModal.classList.add('hide');
         getModal.classList.add('hide');
         getOverlay.classList.remove('overlay-active');
         getModalProductQuant.value = 1;
@@ -287,109 +287,44 @@ function validationWithRegex(){
     let nameReg = /^([A-ZŠĐŽČĆ][a-zšđžčć]{2,30})+$/;
     let emailReg = /^[a-z][\w.]+@[a-z0-9]{3,20}(.[a-z]{3,5})?(.[a-z]{2,3})$/;
     let phoneReg = /^((\+(381))|[0])[6](\s)?[\d]{7,8}$/;
-    let messageReg = /^[A-Z][a-zšđžčć0-9\s.!?"';:,*%#+-/_`&$={}|@]{2,30}$/;
+    let messageReg = /^[A-Z]*[a-zšđžčć0-9\s.!?"';:,*%#+-/_`&$={}|@]{2,30}$/;
 
-    if(urlPath == '/OrangeBox/index.html'){
-        let getNwsEmailValue = document.querySelector('#nwsEmail').value;
-        let getNwsEmailError = document.querySelector('#nwsEmail-error');
-
-        // Newsletter email
-        if(getNwsEmailValue){
-            if(!emailReg.test(getNwsEmailValue)){
-                getNwsEmailError.classList.remove('hide');
-                getNwsEmailError.innerHTML = 'Try format example@gmail.com'
+    function checkReg(locationValue, locationError, regName, msg1, msg2, onlyIndexPage){
+        if(onlyIndexPage != null) {
+            $('#nwsEmail').addClass('mb-3');
+        }
+        if(locationValue){
+            if(!regName.test(locationValue)){
+                locationError.removeClass('hide');
+                locationError.addClass('mb-3');
+                locationError.html(`${msg1}`);
             }
             else{
-                getNwsEmailError.classList.add('hide');
+                locationError.addClass('hide');
+                locationError.removeClass('mb-3');
+                $('#nwsEmail').removeClass('mb-3');
             }
         }
         else{
-            getNwsEmailError.classList.remove('hide');
-            getNwsEmailError.innerHTML = 'Email required.'
+            locationError.removeClass('hide');
+            locationError.addClass('mb-3');
+            locationError.html(`${msg2}`);
         }
-        return;
     }
-    
-    let getContactFNameValue = document.querySelector('#inputFName').value;
-    let getContactFNameError = document.querySelector('#contactFName-error');
 
-    let getContactLNameValue = document.querySelector('#inputLName').value;
-    let getContactLNameError = document.querySelector('#contactLName-error');
-
-    let getContactEmailValue = document.querySelector('#inputEmail').value;
-    let getContactEmailError = document.querySelector('#contactEmail-error');
-
-    let getContactPhoneValue = document.querySelector('#inputPhone').value;
-    let getContactPhoneError = document.querySelector('#contactPhone-error');
-
-    let getContactMsgValue = document.querySelector('#inputMessage').value;
-    let getContactMsgError = document.querySelector('#contactMessage-error');
-
-    // First name
-    if (getContactLNameValue) {
-        if (!nameReg.test(getContactLNameValue)) {
-            getContactLNameError.classList.remove('hide');
-            getContactLNameError.innerHTML = 'First letter must be capital and 3 letters min.';
-        } 
-        else getContactLNameError.classList.add('hide');
-    } 
-    else {
-        getContactLNameError.classList.remove('hide');
-        getContactLNameError.innerHTML = 'Last name required.';
-    }
-    // Last name
-    if(getContactFNameValue){
-        if(!nameReg.test(getContactFNameValue)){
-            getContactFNameError.classList.remove('hide');
-            getContactFNameError.innerHTML = 'First letter must be capital and 3 letters min.'
-        }
-        else getContactFNameError.classList.add('hide');
-    }
-    else{
-        getContactFNameError.classList.remove('hide');
-        getContactFNameError.innerHTML = 'Fist name required.'
-    }
-    // Email
-    if(getContactEmailValue){
-        if(!emailReg.test(getContactEmailValue)){
-            getContactEmailError.classList.remove('hide');
-            getContactEmailError.innerHTML = 'Try format example@gmail.com'
-        }
-        else getContactEmailError.classList.add('hide');
-    }
-    else{
-        getContactEmailError.classList.remove('hide');
-        getContactEmailError.innerHTML = 'Email required.'
-    }
-    // Phone
-    if(getContactPhoneValue){
-        if(!phoneReg.test(getContactPhoneValue)){
-            getContactPhoneError.classList.remove('hide');
-            getContactPhoneError.innerHTML = 'Try format +38162590278/062123456';
-        }
-        else getContactPhoneError.classList.add('hide');
-    }
-    else{
-        getContactPhoneError.classList.remove('hide');
-        getContactPhoneError.innerHTML = 'Phone required.';
-    }
-    // Message
-    if(getContactMsgValue){
-        if(!messageReg.test(getContactMsgValue)){
-            getContactMsgError.classList.remove('hide');
-            getContactMsgError.innerHTML = 'First letter must be capital and 3 letters min.';
-        }
-        else getContactMsgError.classList.add('hide');
-    }
-    else{
-        getContactMsgError.classList.remove('hide');
-        getContactMsgError.innerHTML = 'Message required.';
-    }
-    // window.location.reload();
+    if(urlPath == '/OrangeBox/index.html') checkReg($('#nwsEmail').val(), $('#nwsEmail-error'), emailReg, 'Try format example@gmail.com', 'Email required.', 'yes');
+    checkReg($('#inputFName').val(), $('#contactFName-error'), nameReg, 'First letter must be capital and 3 letters min.', 'First name required.', null);
+    checkReg($('#inputLName').val(), $('#contactLName-error'), nameReg, 'First letter must be capital and 3 letters min.', 'Last name required.', null);
+    checkReg($('#inputEmail').val(), $('#contactEmail-error'), emailReg, 'Try format example@gmail.com', 'Email required.', null);
+    checkReg($('#inputPhone').val(), $('#contactPhone-error'), phoneReg, 'Try format +38162590278/062123456', 'Phone required.', null);
+    checkReg($('#inputMessage').val(), $('#contactMessage-error'), messageReg, 'First letter must be capital and 3 letters min.', 'Message required.', null);
 }
-
 let getInputSubmit = document.querySelector('#inputSubmit');
-getInputSubmit.addEventListener('click', (el) => {
+if(urlPath == '/OrangeBox/index.html') getInputSubmit.addEventListener('click', (el) => {
+    el.preventDefault();
+    validationWithRegex();
+});
+else if(urlPath == '/OrangeBox/contact.html') getInputSubmit.addEventListener('click', (el) => {
     el.preventDefault();
     validationWithRegex();
 });
