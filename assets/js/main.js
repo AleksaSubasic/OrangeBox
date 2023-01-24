@@ -105,7 +105,7 @@ function writeCategories(location, arr, layoutType, part){
 }
 if(urlPath == "/OrangeBox/index.html" || urlPath == "/OrangeBox/") writeCategories(getCategoryTS, categoriesArr, 2, 1);
 if(urlPath == "/OrangeBox/index.html" || urlPath == "/OrangeBox/") writeCategories(getCategoryBS, categoriesArr, 2, 2);
-if(urlPath == "/products.html") writeCategories(getCategoryPicker, categoriesArr, 1, null);
+if(urlPath == "OrangeBox/products.html") writeCategories(getCategoryPicker, categoriesArr, 1, null);
 
 // Products dynamic writing
 let getNewProductsBlock = document.querySelector('#new-products-block .product-container');
@@ -161,8 +161,8 @@ function discountTimer(inputDateStart, inputDateEnd, locationTimer, locationDate
     
     timer = setInterval(showRemaining, 1000);
 }
-if(urlPath == "/index.html" || urlPath == "/") discountTimer('01/17/2023', '02/10/2023',getDiscountTablets, getDiscountTabletsDate);
-if(urlPath == "/index.html" || urlPath == "/") discountTimer('01/17/2023', '02/05/2023',getDiscountTv, getDiscountTvDate);
+if(urlPath == "/OrangeBox/index.html" || urlPath == "/OrangeBox/") discountTimer('01/17/2023', '02/10/2023',getDiscountTablets, getDiscountTabletsDate);
+if(urlPath == "/OrangeBox/index.html" || urlPath == "/OrangeBox/") discountTimer('01/17/2023', '02/05/2023',getDiscountTv, getDiscountTvDate);
 
 // Getting product details on button click
 let getOpenProductBtn = document.querySelectorAll('.open-product-btn');
@@ -213,7 +213,6 @@ if(urlPath == "/OrangeBox/index.html" || urlPath == "/OrangeBox/products.html") 
 
 // Open filter modal
 let getFilterModal = document.querySelector('#filter-modal');
-let getFilterBtn = document.querySelector('#filter-btn');
 if(urlPath == "/OrangeBox/products.html") {
     document.querySelector('#filter-btn').addEventListener('click', () => {
         getFilterModal.classList.remove('hide');
@@ -258,7 +257,7 @@ getAllCategories.forEach( (el) => {
 // Close modal on click or on Escape key
 let exitOnEscapeKey = document.addEventListener('keydown', (el) => {
     if(el.key == 'Escape') {
-        if(urlPath == '/products.html') getFilterModal.classList.add('hide');
+        if(urlPath == '/OrangeBox/products.html') getFilterModal.classList.add('hide');
         getModal.classList.add('hide');
         getOverlay.classList.remove('overlay-active');
         getModalProductQuant.value = 1;
