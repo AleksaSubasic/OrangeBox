@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+  <loc>https://aleksasubasic.github.io/OrangeBox/index.html</loc>
+  <lastmod>2023-01-24</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://aleksasubasic.github.io/OrangeBox/products.html</loc>
+  <lastmod>2023-01-24</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>1</priority>
+</url>
+<url>
+  <loc>https://aleksasubasic.github.io/OrangeBox/contact.html</loc>
+  <lastmod>2023-01-24</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.4</priority>
+</url>
+<url>
+  <loc>https://aleksasubasic.github.io/OrangeBox/about-us.html</loc>
+  <lastmod>2023-01-24</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.3</priority>
+</url>
+</urlset>

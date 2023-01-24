@@ -4,6 +4,11 @@
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="The goal behind it all was to make it easy to locate and purchase the products you require." />
+    <meta name="keywords" content="Online shop, e-commerce, shop, shopping, apple, macbook, console, headphones, tv, laptops, pc, desktop pc, gadgets, gaming" />
+    <meta name="author" content="Aleksa Subasic" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/img/SVG/logo-ico.ico" type="image/x-icon"/>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/bootstrap-5.2.2-dist/css/bootstrap.css"/>
     <!-- Main CSS -->
@@ -12,7 +17,7 @@
     <link rel="stylesheet" href="assets/css/responsive.css"/>
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-    <title>OrangeBox - Home</title>
+    <title>OrangeBox - Products</title>
 </head>
 <body>
     <header>
@@ -39,14 +44,8 @@
 
     <main>
         <div class="container">
-            <div id="filter-product" class="d-flex justify-content-between">
+            <div id="filter-product" class="d-flex justify-content-between shadow-on">
                 <button id="filter-btn" class="my-btn btn-hover text-capitalize">Filter by category</button>
-                <!-- <button id="sort-btn" class="my-btn btn-hover text-capitalize">Sort by price</button> -->
-                <select name="selSort" id="selSort" class="my-btn btn-hover text-capitalize">
-                    <option value="def" selected>Sort by default</option>
-                    <option value="asc">From low to high</option>
-                    <option value="desc">From high to low</option>
-                </select>
             </div>
             <div id="all-products">
                 <div class="product-container d-flex flex-wrap justify-content-between">
@@ -136,7 +135,7 @@
         </button>
     </div>
     <div id="overlay"></div>
-    <div id="filter-sort-modal" class="border-15 shadow-on hide">
+    <div id="filter-modal" class="border-15 shadow-on hide">
         <div id="filter-sort-head"> <h3>Filter by category:</h3> </div>
         <div id="category-picker"></div>
         <button class="close-btn position-absolute d-flex justify-content-center align-items-center border-15">

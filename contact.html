@@ -4,6 +4,11 @@
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Feel free to ask anything, we will answer as quick as possible!" />
+    <meta name="keywords" content="Online shop, e-commerce, shop, contact, contact us" />
+    <meta name="author" content="Aleksa Subasic" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/img/SVG/logo-ico.ico" type="image/x-icon"/>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/bootstrap-5.2.2-dist/css/bootstrap.css"/>
     <!-- Main CSS -->
@@ -12,13 +17,13 @@
     <link rel="stylesheet" href="assets/css/responsive.css"/>
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-    <title>OrangeBox - Home</title>
+    <title>OrangeBox - Contact</title>
 </head>
 <body>
     <header>
         <nav id="nav" class="navbar fixed-top navbar-expand-md bg-light shadow-on">
             <div class="container-fluid">
-                <a class="nav-logo" href="#">OrangeBox</a>
+                <a class="link-logo nav-logo fw-bold border-15" href="index.html">Orange <img src="assets/img/SVG/logo-closed.svg" alt="logo-svg.svg"/></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
@@ -26,7 +31,9 @@
                     <ul class="navbar-nav mb-lg-0">
                         <li class="nav-item"><a class="nav-link border-15" href="index.html">Home</a></li>
                         <li class="nav-item"><a class="nav-link border-15" href="products.html">Products</a></li>
-                        <li class="nav-item"><a class="nav-link fw-bold border-15" href="index.html">OrangeBox</a></li>
+                        <li class="nav-item">
+                            <a class="link-logo nav-link fw-bold border-15" href="index.html">Orange <img src="assets/img/SVG/logo-closed.svg" alt="logo-svg.svg"/></a>
+                        </li>
                         <li class="nav-item"><a class="nav-link border-15 my-link-active" href="#">Contact</a></li>
                         <li class="nav-item"><a class="nav-link border-15" href="about-us.html">About us</a></li>
                     </ul>
@@ -36,114 +43,56 @@
     </header>
 
     <main>
-        <div class="container">
-            <div id="carousel-block" class="border-15 mb-5vh">
-                <!-- <img id="carousel-block-image" src="assets/img/console-1.png" alt="alt_img_1.jpg"/> -->
-                <h2 id="carousel-block-title"></h2>
-            </div>
-            <div id="product-cat-block" class="mb-5vh">
-                <h1 class="text-center title-h1 border-15 mb-5vh shadow-on border-gray">Categories</h1>
-                <div id="categories" class="d-flex flex-column">
-                    <div id="product-cat-block-ts" class="d-flex">
-                        <!-- Dynamic categories half 1 -->
-                        <!-- <d class="d-flex">
-                            <div id="id${arr[i].cName}" class="cat-image cat-block shadow-on border-15 border-gray orange-hover">
-                                <h5 class="text-center">Headphones</h5>
-                                <img src="assets/img/SVG/headphones-category.svg" alt="">
-                                <button class="open-cat-btn text-capitalize border-15">view more</button>
+        <div class="container mb-5vh">
+            <div id="contact-us" class="d-flex shadow-on border-15">
+                <div id="contact-us-ls" class="d-flex justify-content-center align-items-center flex-column">
+                    <div id="contact-address" class="mb-5vh">
+                        <h3>Address</h3>
+                        <p class="">
+                            357-1227, Tateishi <br/>
+                            Katsushika-ku, Tokyo
+                        </p>
+                    </div>
+                    <div id="contact-phone" class="mb-5vh">
+                        <h3>Phone</h3>
+                        <p class="">+8193-791-9683</p>
+                    </div>
+                    <div id="contact-mail">
+                        <h3>General Support</h3>
+                        <p class="">support.orange.box@gmail.com</p>
+                    </div>
+                </div>
+                <div id="contact-us-rs" class="">
+                    <form class="d-flex flex-column">
+                        <h2 class="text-uppercase text-center">Send us a message</h2>
+                        <div class="d-flex flex-column border-gray border-15">
+                            <label for="inputFName" class="text-capitalize text-center">Tell us your name:</label>
+                            <div class="d-flex justify-content-center">
+                                <input type="text" name="inputFName" id="inputFName" placeholder="First name"/>
+                                <input type="text" name="inputLName" id="inputLName" placeholder="Last name"/>
                             </div>
-                            <div id="id${arr[i].cName}" class="cat-image cat-block shadow-on border-15 border-gray orange-hover">
-                                <h5 class="text-center">Headphones</h5>
-                                <img src="assets/img/SVG/headphones-category.svg" alt="">
-                                <button class="open-cat-btn text-capitalize border-15">view more</button>
-                            </div>
-                            <div id="id${arr[i].cName}" class="cat-image cat-block shadow-on border-15 border-gray orange-hover">
-                                <h5 class="text-center">Headphones</h5>
-                                <img src="assets/img/SVG/headphones-category.svg" alt="">
-                                <button class="open-cat-btn text-capitalize border-15">view more</button>
-                            </div>
-                        </d>
-                        <div id="id${arr[i].cName}" class="cat-image block-long shadow-on border-15 border-gray orange-hover">
-                            <h5 class="text-center">Console</h5>
-                            <img src="assets/img/SVG/gaming-category.svg" alt="">
-                            <button class="open-cat-btn text-capitalize border-15">view more</button>
-                        </div> -->
-                    </div>
-                    <div id="product-cat-block-bs" class="d-flex">
-                        <!-- Dynamic categories half 2 -->
-                    </div>
-                </div>
-            </div>
-            <div id="safety-block" class="mb-10vh">
-                <div id="safety-blocks" class="d-flex justify-content-between align-items-center shadow-on border-15 border-gray pad-15-0 px-2">
-                    <div class="d-flex align-items-center">
-                        <img src="assets/img/SVG/orangebox-transport-svg.svg" alt="orangebox-transport-svg"/>
-                        <div>
-                            <h4 class="text-capitalize">Free shippinng</h4>
-                            <h5 class="text-capitalize my-text-muted">Free shipping on orders above 50$</h5>
                         </div>
-                    </div>
-                    <div class="separator"></div>
-                    <div class="d-flex align-items-center">
-                        <img src="assets/img/SVG/orangebox-money-svg.svg" alt="orangebox-money-svg"/>
-                        <div>
-                            <h4 class="text-capitalize">Money guarantee</h4>
-                            <h5 class="text-capitalize my-text-muted">30 day money back</h5>
+                        <div class="d-flex">
+                            <span id="contactFName-error" class="text-val-error hide border-15 me-1"></span>
+                            <span id="contactLName-error" class="text-val-error hide border-15"></span>
                         </div>
-                    </div>
-                    <div class="separator"></div>
-                    <div class="d-flex align-items-center">
-                        <img src="assets/img/SVG/orangebox-support-svg.svg" alt="orangebox-support-svg"/>
-                        <div>
-                            <h4 class="text-capitalize">Online support 24/7</h4>
-                            <h5 class="text-capitalize my-text-muted">Technical support 24/7</h5>
+                        <div class="d-flex flex-column border-gray border-15">
+                            <label for="inputEmail" class="text-capitalize text-center">Enter your email:</label>
+                            <input type="email" name="inputEmail" id="inputEmail" placeholder="Eg. example@gmail.com"/>
                         </div>
-                    </div>
-                    <div class="separator"></div>
-                    <div class="d-flex align-items-center">
-                        <img src="assets/img/SVG/orangebox-wallet-svg.svg" alt="orangebox-wallet-svg"/>
-                        <div>
-                            <h4 class="text-capitalize">Secure payment</h4>
-                            <h5 class="text-capitalize my-text-muted">All cards accepted</h5>
+                        <span id="contactEmail-error" class="text-val-error hide border-15"></span>
+                        <div class="d-flex flex-column border-gray border-15">
+                            <label for="inputPhone" class="text-capitalize text-center">Enter your phone number:</label>
+                            <input type="tel" name="inputPhone" id="inputPhone" placeholder="Eg. +381 123 456 78"/>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div id="discount-block-1" class="mb-10vh">
-                <div class="shadow-on border-15 border-gray orange-hover">
-
-                </div>
-            </div>
-            <div id="new-products-block" class="mb-5vh">
-                <h1 class="text-center title-h1 border-15 mb-5vh shadow-on border-gray">New Products</h1>
-                <div class="product-container d-flex flex-wrap justify-content-between">
-                    <!-- <div class="product-block shadow-on border-15 border-gray orange-hover">
-                        <h5 class="text-center">Product 1</h5>
-                        <img src="assets/img/computer-1.png" alt="computer-1"/>
-                        <div class="d-flex justify-content-between">
-                            <h5 class="border-10">35$</h5>
-                            <button class="open-product-btn text-capitalize border-10" value="1">View more 1</button>
+                        <span id="contactPhone-error" class="text-val-error hide border-15"></span>
+                        <div class="d-flex flex-column border-gray border-15">
+                            <label for="inputMessage" class="text-capitalize text-center"></label>
+                            <textarea name="inputMessage" id="inputMessage" rows="5" placeholder="Type here..."></textarea>
                         </div>
-                    </div> -->
-                </div>
-            </div>
-            <div id="discount-block-2" class="mb-10vh">
-                <div class="shadow-on border-15 border-gray orange-hover">
-
-                </div>
-            </div>
-            <div id="best-seller-block" class="position-relative">
-                <h1 class="text-center title-h1 border-15 mb-5vh shadow-on border-gray">Best Sellers</h1>
-                <div class="product-container d-flex flex-wrap justify-content-between mb-5vh">
-                   <!-- <div class="product-block shadow-on border-15 border-gray orange-hover">
-                        <h5>Product 1</h5>
-                        <button class="open-product-btn text-capitalize border-15" value="1">View more 1</button>
-                    </div> -->
-                </div>
-            </div>
-            <div id="contact-block" class="mb-10vh">
-                <div class="shadow-on border-15 border-gray orange-hover">
-                    Sub to our newsletter
+                        <span id="contactMessage-error" class="text-val-error hide border-15"></span>
+                        <input id="inputSubmit" class="my-btn btn-hover" type="submit" value="Send"/>
+                    </form>
                 </div>
             </div>
         </div>
@@ -183,45 +132,6 @@
             <a href="https://aleksasubasic.github.io/portfolio/" target="_blank">Documentation</a>
         </div>
     </footer>
-
-    <!-- Modal -->
-    <div id="modal" class="d-flex justify-content-between p-3 shadow-on hide">
-        <div id="modal-image" class="modal-block">
-            <!-- product image -->
-        </div>
-        <div class="modal-block d-flex flex-column justify-content-between">
-            <div id="modal-block-ts" class="border-black shadow-on">
-                <h5 id="modal-product-name"></h5>
-                <h5 id="modal-product-information">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum accusamus recusandae voluptatum inventore minus. Illum amet animi odio architecto distinctio.</h5>
-                <div id="color-picker-block" class="d-flex align-items-center">
-                    <h5>Color:</h5>
-                    <div id="color-black" class="color-picker-blocks"></div>
-                    <div id="color-white" class="color-picker-blocks"></div>
-                    <div id="color-orange" class="color-picker-blocks"></div>
-                    <div id="color-blue" class="color-picker-blocks"></div>
-                    <div id="color-green" class="color-picker-blocks"></div>
-                </div>
-                <h5>Price: <span id="product-price" class="product-price">5</span></h5>
-            </div>
-            <div id="modal-block-bs" class="border-black">
-                <div class="d-flex justify-content-between align-items-end pad-15-0">
-                    <h5 id="modal-price" class="shadow-on">Total price: <span id="product-total-price" class="product-price"></span></h5>
-                    <div id="modal-quantity" class="d-flex shadow-on">
-                        <label for="m-quant">Quantity: </label>
-                        <input type="number" name="m-quant" id="m-quant" min="1" max="10" value="1"/>
-                    </div>
-                </div>
-                <div class="d-flex">
-                    <button id="add-to-cart-btn" class="modal-btn border-15 text-capitalize shadow-on">Add to cart</button>
-                </div>
-            </div>
-        </div>
-        <button id="close-btn" class="position-absolute d-flex justify-content-center align-items-center border-15">
-            <div class="close-cross"></div>
-            <div class="close-cross"></div>
-        </button>
-    </div>
-    <div id="overlay"></div>
 
     <!-- Bootstrap JavaScript -->
     <script type="text/javascript" src="assets/bootstrap-5.2.2-dist/js/bootstrap.bundle.js"></script>
