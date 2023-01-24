@@ -37,8 +37,6 @@ function writeCategories(location, arr, layoutType, part){
                     dynamicCategories += `<div class="d-flex justify-content-between"><label for="cat${arr[i].cName}">${arr[i].cName}</label>
                                           <input type="checkbox" name="cat${arr[i].cName}" id="cat${arr[i].cName}" value="${i+1}"/></div>`;
                 }
-                dynamicCategories += `<div class="d-flex justify-content-between"><label for="catDeals">Deals</label>
-                                          <input type="checkbox" name="catDeals" id="catDeals" value="${i+1}"/></div>`;
             break;
         case 2:
                 // First or second half layout, part 1 or part 2
@@ -105,7 +103,7 @@ function writeCategories(location, arr, layoutType, part){
 }
 if(urlPath == "/OrangeBox/index.html" || urlPath == "/OrangeBox/") writeCategories(getCategoryTS, categoriesArr, 2, 1);
 if(urlPath == "/OrangeBox/index.html" || urlPath == "/OrangeBox/") writeCategories(getCategoryBS, categoriesArr, 2, 2);
-if(urlPath == "OrangeBox/products.html") writeCategories(getCategoryPicker, categoriesArr, 1, null);
+if(urlPath == "/OrangeBox/products.html") writeCategories(getCategoryPicker, categoriesArr, 1, null);
 
 // Products dynamic writing
 let getNewProductsBlock = document.querySelector('#new-products-block .product-container');
