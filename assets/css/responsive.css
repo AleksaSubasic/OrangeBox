@@ -178,6 +178,12 @@
     #about-us .p-3 p{
         font-size: 0.9rem;
     }
+    #first-last-div{
+        flex-direction: column;
+    }
+    .text-val-error{
+        font-size: 0.8rem;
+    }
 }
 @media screen and (max-width: 765px) {
     .nav-logo{

@@ -68,9 +68,6 @@ button{
     color: var(--orange);
     background: var(--gray);
 }
-div{
-    border: 1px solid;
-}
 
 /* Custom classes */
 .shadow-on{
@@ -633,7 +630,7 @@ nav{
 /* Validation */
 .text-val-error{
     display: block;
-    margin: 5px auto;
+    margin: 0px auto;
     padding: 3px 5px;
     text-align: center;
     font-size: 0.9rem;
