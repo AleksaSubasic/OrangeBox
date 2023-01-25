@@ -280,10 +280,11 @@ getOpenCatBtn.forEach(el => {
 
 // Validation
 function validationWithRegex(){
+    let success = 0;
     let nameReg = /^([A-ZŠĐŽČĆ][a-zšđžčć]{2,30})+$/;
     let emailReg = /^[a-z][\w.]+@[a-z0-9]{3,20}(.[a-z]{3,5})?(.[a-z]{2,3})$/;
     let phoneReg = /^((\+(381))|[0])[6](\s)?[\d]{7,8}$/;
-    let messageReg = /^[A-Z]*[a-zšđžčć0-9\s.!?"';:,*%#+-/_`&$={}|@]{2,30}$/;
+    let messageReg = /^[A-Z]+[a-zšđžčć0-9\s.!?"';:,*%#+-/_`&$={}|@]{2,30}$/;
 
     function checkReg(locationValue, locationError, regName, msg1, msg2, onlyIndexPage){
         if(onlyIndexPage != null) {
@@ -294,6 +295,7 @@ function validationWithRegex(){
                 locationError.removeClass('hide');
                 locationError.addClass('mb-3');
                 locationError.html(`${msg1}`);
+                success++;
             }
             else{
                 locationError.addClass('hide');
@@ -305,6 +307,7 @@ function validationWithRegex(){
             locationError.removeClass('hide');
             locationError.addClass('mb-3');
             locationError.html(`${msg2}`);
+            success++;
         }
     }
 
@@ -314,6 +317,25 @@ function validationWithRegex(){
     checkReg($('#inputEmail').val(), $('#contactEmail-error'), emailReg, 'Try format example@gmail.com', 'Email required.', null);
     checkReg($('#inputPhone').val(), $('#contactPhone-error'), phoneReg, 'Try format +38162590278/062123456', 'Phone required.', null);
     checkReg($('#inputMessage').val(), $('#contactMessage-error'), messageReg, 'First letter must be capital and 3 letters min.', 'Message required.', null);
+    console.log(success)
+    if(success == 0) {
+        $('.text-val-success').removeClass('hide');
+            $('.text-val-success').addClass('mb-3');
+            $('.text-val-success').html('Successfully sent!');
+            $('.emptyInput').val('');
+            setTimeout(() => {
+                $('.text-val-success').addClass('hide');
+            }, 1500);
+        }
+        else if(urlPath == '/OrangeBox/index.html' && success != 6){
+            $('.text-val-success').removeClass('hide');
+            $('.text-val-success').addClass('mt-3');
+            $('.text-val-success').html('Successfully subscribed!');
+            $('.emptyInput').val('');
+            setTimeout(() => {
+                $('.text-val-success').addClass('hide');
+            }, 1500);
+    }
 }
 let getInputSubmit = document.querySelector('#inputSubmit');
 if(urlPath == '/OrangeBox/index.html') getInputSubmit.addEventListener('click', (el) => {
