@@ -270,12 +270,11 @@ document.querySelectorAll('.close-btn').forEach(el =>{
     });
 })
 
-// Open product page with selected category
+// Open product page
 let getOpenCatBtn = document.querySelectorAll('.open-prod-page');
 getOpenCatBtn.forEach(el => {
     el.addEventListener('click', el => {
-        urlPath = '/OrangeBox/products.html';
-        document.location.pathname = urlPath;
+        document.location.pathname = '/OrangeBox/products.html';
     });
 });
 
@@ -324,4 +323,10 @@ if(urlPath == '/OrangeBox/index.html') getInputSubmit.addEventListener('click', 
 else if(urlPath == '/OrangeBox/contact.html') getInputSubmit.addEventListener('click', (el) => {
     el.preventDefault();
     validationWithRegex();
+});
+
+// Just for fun
+let neverGonnaGiveYouUp = document.querySelector('#click-me');
+if(urlPath == '/OrangeBox/about-us.html')neverGonnaGiveYouUp.addEventListener('click', () => {
+    window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley');
 });
