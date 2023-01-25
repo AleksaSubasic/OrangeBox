@@ -68,8 +68,8 @@
                         <div class="d-flex flex-column border-gray border-15 mb-3">
                             <label for="inputFName" class="text-capitalize text-center">Tell us your name:</label>
                             <div class="d-flex justify-content-center">
-                                <input type="text" name="inputFName" id="inputFName" placeholder="First name"/>
-                                <input type="text" name="inputLName" id="inputLName" placeholder="Last name"/>
+                                <input type="text" name="inputFName" class="emptyInput" id="inputFName" placeholder="First name"/>
+                                <input type="text" name="inputLName" class="emptyInput" id="inputLName" placeholder="Last name"/>
                             </div>
                         </div>
                         <div id="first-last-div" class="d-flex">
@@ -79,21 +79,22 @@
 
                         <div class="d-flex flex-column border-gray border-15 mb-3">
                             <label for="inputEmail" class="text-capitalize text-center">Enter your email:</label>
-                            <input type="email" name="inputEmail" id="inputEmail" placeholder="Eg. example@gmail.com"/>
+                            <input type="email" name="inputEmail" class="emptyInput" id="inputEmail" placeholder="Eg. example@gmail.com"/>
                         </div>
                         <span id="contactEmail-error" class="text-val-error hide border-15"></span>
 
                         <div class="d-flex flex-column border-gray border-15 mb-3">
                             <label for="inputPhone" class="text-capitalize text-center">Enter your phone number:</label>
-                            <input type="tel" name="inputPhone" id="inputPhone" placeholder="Eg. +381 123 456 78"/>
+                            <input type="tel" name="inputPhone" class="emptyInput" id="inputPhone" placeholder="Eg. +381 123 456 78"/>
                         </div>
                         <span id="contactPhone-error" class="text-val-error hide border-15"></span>
 
                         <div class="d-flex flex-column border-gray border-15 mb-3">
                             <label for="inputMessage" class="text-capitalize text-center">Message:</label>
-                            <textarea name="inputMessage" id="inputMessage" rows="5" placeholder="Type here..."></textarea>
+                            <textarea name="inputMessage" class="emptyInput" id="inputMessage" rows="5" placeholder="Type here..."></textarea>
                         </div>
                         <span id="contactMessage-error" class="text-val-error hide border-15"></span>
+                        <span id="contact-success" class="text-val-success hide border-15"></span>
 
                         <input id="inputSubmit" class="my-btn btn-hover" type="submit" value="Send"/>
                     </form>
