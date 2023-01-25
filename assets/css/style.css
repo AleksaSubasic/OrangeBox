@@ -16,7 +16,6 @@
     padding: 0px;
     margin: 0px;
     font-family: 'Poppins', sans-serif;
-    /* transition: 0.4s !important; */
 }
 svg{
     font-family: 'Poppins', sans-serif;
@@ -595,7 +594,7 @@ nav{
 .about-us-ls{
     margin-right: 2vw;
 }
-#about-us .border-orange{
+#about-us .border-orange, #about-author .about-us-ls{
     background-image: url('../img/online-shopping.jpg');
     background-position: center center;
     background-size: cover;
@@ -604,9 +603,16 @@ nav{
 #about-us-ms .border-orange{
     background-image: url('../img/kyoto.jpg');
 }
-#about-us-bs .border-orange{
+#about-us-bs .border-orange, #about-author .about-us-ls{
     background-image: url('../img/Logo-2.png');
     background-color: #e2b588;
+}
+#about-author .about-us-ls{
+    background-image: url('../img/about-me.jpg');
+    background-size: cover;
+}
+#click-me{
+    cursor: help;
 }
 
 
@@ -685,5 +691,4 @@ footer{
 .product-block, #modal-image, .discount-circle{
     background-position: center;
     background-repeat: no-repeat;
-    /* background-size: 70%; */
 }

@@ -62,7 +62,7 @@
     .modal-block{
         width: 350px;
     }
-    #modal-block-ts h5, #modal-product-information::before, #modal-block-bs h5, #modal-quantity{
+    #modal-block-ts h5, #modal-product-information::before, #modal-block-bs h5, #modal-quantity, #discount-btn-1, #discount-btn-2, #nwsEmail-sub{
         font-size: 1rem;
     }
     #modal-product-name{
@@ -73,9 +73,6 @@
     }
     #m-quant{
         width: 40px;
-    }
-    #discount-btn-1, #discount-btn-2, #nwsEmail-sub{
-        font-size: 1rem;
     }
     .discount-circle{
         top: -40px;
@@ -116,13 +113,13 @@
         flex-wrap: wrap;
         margin-bottom: 0px;
     }
-    .product-block .d-flex{
+    .product-block .d-flex, #first-last-div{
         flex-direction: column;
     }
     .product-block .d-flex .hide{
         display: inline-block !important;
     }
-    .my-btn{
+    .my-btn, footer p, footer li, #about-us .p-3 p{
         font-size: 0.9rem;
     }
     #safety-block{
@@ -133,9 +130,6 @@
     }
     footer h4{
         font-size: 1.2rem;
-    }
-    footer p, footer li{
-        font-size: 0.9rem;
     }
     .cat-block img{
         margin: 15px 0px;
@@ -172,17 +166,11 @@
     #newsletter-block{
         width: 100%;
     }
-    .carousel-caption p{
+    .carousel-caption p, .text-val-error{
         font-size: 0.8rem;
     }
-    #about-us .p-3 p{
-        font-size: 0.9rem;
-    }
-    #first-last-div{
-        flex-direction: column;
-    }
-    .text-val-error{
-        font-size: 0.8rem;
+    #about-author .about-us-ls{
+        background-position: center right;
     }
 }
 @media screen and (max-width: 765px) {
@@ -212,17 +200,19 @@
         margin-left: 25%;
         width: 55%;
     }
-    #product-cat-block-bs .block-long{
+    #product-cat-block-bs .block-long, #modal-image{
         margin-bottom: 2vh;
     }
-    #product-cat-block-bs .d-flex .cat-block:first-child{
-        margin-left: 0px;
+    #product-cat-block-bs .d-flex .cat-block:first-child, #product-cat-block-ts .d-flex .cat-block:last-child{
+        margin: 0px;
     }
     .product-container{
         justify-content: space-around !important;
     }
-    #modal{
+    #modal, #copyright{
         flex-direction: column;
+    }
+    #modal{
         height: 80vh;
     }
     .modal-block{
@@ -231,7 +221,6 @@
     #modal-image{
         height: inherit;
         margin-right: 0px;
-        margin-bottom: 2vh;
         background-size: 60%;
     }
     #modal-block-ts h5, #modal-product-information::before, #modal-block-bs h5, #modal-quantity{
@@ -247,18 +236,15 @@
         top: -10px;
         right: -10px;
     }
-    #copyright{
-        flex-direction: column;
-    }
     #copyright .separator{
         margin: 1vh 0px;
         width: 35%;
         height: 3px;
     }
-    .discount-text-block h2{
+    .discount-text-block h2, #contact-us-rs form h2{
         font-size: 1.3rem;
     }
-    .discount-text-block .my-text-muted, .carousel-caption h5{
+    .discount-text-block .my-text-muted, .carousel-caption h5, #contact-us-ls p, #contact-us-rs form input, #contact-us-rs form textarea{
         font-size: 0.8rem;
     }
     .discount-circle{
@@ -277,12 +263,6 @@
     #contact-us-ls h3{
         font-size: 1.2rem;
     }
-    #contact-us-ls p, #contact-us-rs form input, #contact-us-rs form textarea{
-        font-size: 0.8rem;
-    }
-    #contact-us-rs form h2{
-        font-size: 1.3rem;
-    }
     #contact-us-rs form label{
         font-size: 1rem !important;
     }
@@ -291,7 +271,7 @@
     }
 }
 @media screen and (max-width: 576px){
-    #product-cat-block-ts .d-flex, #product-cat-block-bs .d-flex{
+    #product-cat-block-ts .d-flex, #product-cat-block-bs .d-flex, footer .container, #contact-us, #about-us-ts, #about-us-ms, #about-us-bs, #about-author{
         flex-direction: column;
     }
     #product-cat-block-ts .d-flex, #product-cat-block-bs .d-flex, .cat-block{
@@ -310,11 +290,8 @@
     .product-block{
         width: 220px;
     }
-    .product-block .text-center{
+    .product-block .text-center, #about-us .p-3 p{
         font-size: 1.1rem;
-    }
-    footer .container{
-        flex-direction: column;;
     }
     #footer-ls, #footer-ms, #footer-rs{
         width: 100%;
@@ -342,9 +319,6 @@
     footer{
         bottom: -600px;
     }
-    #contact-us{
-        flex-direction: column;
-    }
     #contact-us-rs, #contact-us-ls{
         width: 100%;
     }
@@ -355,8 +329,7 @@
     #contact-us-rs{
         border-radius: 0px 0px 15px 15px;
     }
-    #about-us-ts, #about-us-ms, #about-us-bs{
-        flex-direction: column;
+    #about-us-ts, #about-us-ms, #about-us-bs, #about-author{
         margin: 0px;
     }
     #about-us-ts, #about-us-bs{
@@ -371,9 +344,6 @@
     }
     #about-us .p-3{
         height: auto;
-    }
-    #about-us .p-3 p{
-        font-size: 1.1rem;
     }
 
 }
@@ -411,7 +381,7 @@
     #modal{
         width: 95%;
     }
-    .discount-text-block h2{
+    .discount-text-block h2, #newsletter-block h3{
         font-size: 1.1rem;
     }
     .discount-text-block .my-text-muted{
@@ -425,8 +395,5 @@
         left: 6%;
         width: 100px;
         height: 100px;
-    }
-    #newsletter-block h3{
-        font-size: 1.1rem;
     }
 }
